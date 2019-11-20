@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
@@ -18,55 +18,84 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Sistema contables", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!-- <li>@Html.ActionLink("CATALOGO", "Create", "CATALOGO_DE_PRODUCTO")</li>
-    <li>@Html.ActionLink("CHEQUE", "Create", "CHEQUES")</li>
-    <li>@Html.ActionLink("CLIENTE", "Create", "CLIENTES")</li>
-    <li>@Html.ActionLink("COMPRA", "Create", "COMPRAS")</li>
-    <li>@Html.ActionLink("CIT", "Create", "COSTO_INDIRECTO")</li>
-    <li>@Html.ActionLink("CM", "Create", "COTOS_DE_MATERIAL")</li>
-    <li>@Html.ActionLink("CUENTA", "Create", "CUENTAS")</li>
-    <li>@Html.ActionLink("HOJA TRABAJO", "Create", "HOJA_DE_TRABAJO")</li>
-    <li>@Html.ActionLink("INV MATERIAL", "Create", "INVENTARIO_MATERIAL")</li>
-    <li>@Html.ActionLink("KARDEX", "Create", "KARDEXES")</li>
-    <li>@Html.ActionLink("PATRONO", "Create", "PATRONOES")</li>
-    <li>@Html.ActionLink("PERIODO", "Create", "PERIODOES")</li>
-    <li>@Html.ActionLink("PRODUCTO PROCESO", "Create", "PRODUCTO_EN_PROCESO")</li>
-    <li>@Html.ActionLink("PRODUCTO TERMINADO", "Create", "PRODUCTO_TERMINADO")</li>
-    <li>@Html.ActionLink("PROVEEDOR", "Create", "PROVEEDORS")</li>
-    <li>@Html.ActionLink("REMESA", "Create", "REMESAS")</li>
-    <li>@Html.ActionLink("TRANSACCIONES", "Create", "TRANSACCIONES")</li>
-    <li>@Html.ActionLink("VENTA", "Create", "VENTAS")</li>-->
+                <ul class="nav navbar-nav ">
                     <li class="item dropdown">
-                        <a class="navbar-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Venta
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Movimietos
+                            <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li class="item">@Html.ActionLink("NUEVA VENTA", "Create", "VENTAS")</li>
-
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Transaccion</li>
+                            <li>@Html.ActionLink("ver transacciones", "Index", "TRANSACCIONES")</li>
+                            <li>@Html.ActionLink("nueva transaccion", "Create", "TRANSACCIONES")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Venta</li>
+                            <li>@Html.ActionLink("ver ventas", "Index", "VENTAS")</li>
+                            <li>@Html.ActionLink("crear nueva venta", "Create", "VENTAS")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Proveedor</li>
+                            <li>@Html.ActionLink("ver proveedores", "Index", "PROVEEDORS")</li>
+                            <li>@Html.ActionLink("agregar proveedor", "Create", "PROVEEDORS")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Compra</li>
+                            <li>@Html.ActionLink("ver compra", "Index", "COMPRAS")</li>
+                            <li>@Html.ActionLink("agregar compra", "Create", "COMPRAS")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Cliente</li>
+                            <li>@Html.ActionLink("ver Clientes", "Index", "CLIENTES")</li>
+                            <li>@Html.ActionLink("agregar clientes", "Create", "CLIENTES")</li>
                         </ul>
                     </li>
                     <li class="item dropdown">
-                        <a class="navbar-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Planilla
+                            <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                            <li class="item dropdown-menu-right">@Html.ActionLink("PLANILLA", "Create", "PLANILLAS")</li>
-                            <li class="divider item">Empleado</li>
-                            <li class="item">@Html.ActionLink("EMPLEADO", "Create", "EMPLEADOES")</li>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("ver planilla", "Index", "PLANILLAs")</li>
+                            <li>@Html.ActionLink("nueva planilla", "Create", "PLANILLAs")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Empleado</li>
+                            <li>@Html.ActionLink("trabajadores", "Index", "EMPLEADOes")</li>
+                            <li>@Html.ActionLink("agregar trabajador", "create", "EMPLEADOes")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">hoja de trabajo</li>
+                            <li>@Html.ActionLink("ver hoja", "Index", "HOJA_DE_TRABAJO")</li>
+                            <li>@Html.ActionLink("nueva hoja", "Create", "HOJA_DE_TRABAJO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Aporte patrono</li>
+                            <li>@Html.ActionLink("aporte", "Index", "PATRONOES")</li>
+                            <li>@Html.ActionLink("nuevos aportes", "Create", "PATRONOES")</li>
                         </ul>
                     </li>
-                    
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Inventario
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("inventario", "Index", "INVENTARIO_MATERIAL")</li>
+                            <li>@Html.ActionLink("agregar articulo", "Create", "INVENTARIO_MATERIAL")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Producto en proceso</li>
+                            <li>@Html.ActionLink("ver produtos", "Index", "PRODUCTO_EN_PROCESO")</li>
+                            <li>@Html.ActionLink("agragra producto a proceso", "Create", "PRODUCTO_EN_PROCESO")</li>
+                            <li class="dropdown-header">Producto terminado</li>
+                            <li>@Html.ActionLink("ver productos", "Index", "PRODUCTO_TERMINADO")</li>
+                            <li>@Html.ActionLink("agregar producto", "Create", "PRODUCTO_TERMINADO")</li>
+                            <li class="dropdown-header">Kardex</li>
+                            <li>@Html.ActionLink("ver Kardex", "Index", "KARDEXES")</li>
+                            <li>@Html.ActionLink("nueva Kardex", "create", "KARDEXES")</li>
                 </ul>
-          @Html.Partial("_LoginPartial")
-      </div> 
-        
-           
-        </div>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+
+
         </div>
     </div>
     <div class="container body-content">
