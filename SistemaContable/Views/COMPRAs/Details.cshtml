@@ -1,0 +1,138 @@
+﻿@model SistemaContable.Models.COMPRA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COMPRA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCU_COMPRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCU_COMPRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_PAGO_COMPRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_PAGO_COMPRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_EMISION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_EMISION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONCEPTO_COMPRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONCEPTO_COMPRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DE_PAGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DE_PAGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SUMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTAL_COMPRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTAL_COMPRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPRA_EXENTAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPRA_EXENTAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RETENCION_RENTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RETENCION_RENTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BONIFICACIONES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BONIFICACIONES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RETENCION_DE_IVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RETENCION_DE_IVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROVEEDOR.NOM_PROVEEDOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROVEEDOR.NOM_PROVEEDOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_INDIRECTO.ID_COSTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_INDIRECTO.ID_COSTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COTOS_DE_MATERIAL.ID_COSMATERIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COTOS_DE_MATERIAL.ID_COSMATERIAL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CORRELATIVO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

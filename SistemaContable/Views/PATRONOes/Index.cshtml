@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SistemaContable.Models.PATRONO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ISSS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AFP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISSS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AFP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LINEA_DE_PLANILLA.ID_LINEA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDPATRONO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDPATRONO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDPATRONO })
+        </td>
+    </tr>
+}
+
+</table>

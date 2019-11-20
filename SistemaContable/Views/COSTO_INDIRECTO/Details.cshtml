@@ -1,0 +1,42 @@
+﻿@model SistemaContable.Models.COSTO_INDIRECTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COSTO_INDIRECTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_DE_MANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_DE_MANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OTROS_COSTOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OTROS_COSTOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PLANILLA.DUI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PLANILLA.DUI)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_COSTO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

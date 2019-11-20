@@ -1,0 +1,48 @@
+﻿@model SistemaContable.Models.COSTO_INDIRECTO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>COSTO_INDIRECTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_DE_MANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_DE_MANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OTROS_COSTOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OTROS_COSTOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PLANILLA.DUI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PLANILLA.DUI)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

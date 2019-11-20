@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A50304_jorgemarro91ModelStoreContainer" CdmEntityContainer="DB_A50304_jorgemarro91Entities">
+    <EntitySetMapping Name="CATALOGO_DE_PRODUCTO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CATALOGO_DE_PRODUCTO">
+        <MappingFragment StoreEntitySet="CATALOGO_DE_PRODUCTO">
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="COSTO_" ColumnName="COSTO_" />
+          <ScalarProperty Name="DESCRIPCION_PRODUCTO" ColumnName="DESCRIPCION_PRODUCTO" />
+          <ScalarProperty Name="PORCENTAJE_GANACIA" ColumnName="PORCENTAJE_GANACIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHEQUE">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CHEQUE">
+        <MappingFragment StoreEntitySet="CHEQUE">
+          <ScalarProperty Name="CORRELATIVO_CHEQUE" ColumnName="CORRELATIVO_CHEQUE" />
+          <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+          <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CONCEPTO_CHEQUE" ColumnName="CONCEPTO_CHEQUE" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ANULADO_CHEQUE" ColumnName="ANULADO_CHEQUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="DUI_CLIENTE" ColumnName="DUI_CLIENTE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TELEFO" ColumnName="TELEFO" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="NUMERO_REGISTRO" ColumnName="NUMERO_REGISTRO" />
+          <ScalarProperty Name="GIRO" ColumnName="GIRO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPRA">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.COMPRA">
+        <MappingFragment StoreEntitySet="COMPRA">
+          <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+          <ScalarProperty Name="ID_COSMATERIAL" ColumnName="ID_COSMATERIAL" />
+          <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
+          <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+          <ScalarProperty Name="TIPO_DOCU_COMPRA" ColumnName="TIPO_DOCU_COMPRA" />
+          <ScalarProperty Name="TIPO_PAGO_COMPRA" ColumnName="TIPO_PAGO_COMPRA" />
+          <ScalarProperty Name="FECHA_EMISION" ColumnName="FECHA_EMISION" />
+          <ScalarProperty Name="CONCEPTO_COMPRA" ColumnName="CONCEPTO_COMPRA" />
+          <ScalarProperty Name="TIPO_DE_PAGO" ColumnName="TIPO_DE_PAGO" />
+          <ScalarProperty Name="SUMA" ColumnName="SUMA" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="TOTAL_COMPRA" ColumnName="TOTAL_COMPRA" />
+          <ScalarProperty Name="COMPRA_EXENTAS" ColumnName="COMPRA_EXENTAS" />
+          <ScalarProperty Name="RETENCION_RENTA" ColumnName="RETENCION_RENTA" />
+          <ScalarProperty Name="BONIFICACIONES" ColumnName="BONIFICACIONES" />
+          <ScalarProperty Name="RETENCION_DE_IVA" ColumnName="RETENCION_DE_IVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COSTO_INDIRECTO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.COSTO_INDIRECTO">
+        <MappingFragment StoreEntitySet="COSTO_INDIRECTO">
+          <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
+          <ScalarProperty Name="ID_PLANILLA" ColumnName="ID_PLANILLA" />
+          <ScalarProperty Name="COSTO_DE_MANO" ColumnName="COSTO_DE_MANO" />
+          <ScalarProperty Name="OTROS_COSTOS" ColumnName="OTROS_COSTOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COTOS_DE_MATERIAL">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.COTOS_DE_MATERIAL">
+        <MappingFragment StoreEntitySet="COTOS_DE_MATERIAL">
+          <ScalarProperty Name="ID_COSMATERIAL" ColumnName="ID_COSMATERIAL" />
+          <ScalarProperty Name="FECHA_DE_INGRESO" ColumnName="FECHA_DE_INGRESO" />
+          <ScalarProperty Name="COSTO_DE_COMPRA" ColumnName="COSTO_DE_COMPRA" />
+          <ScalarProperty Name="COSTO_UNITARIO" ColumnName="COSTO_UNITARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUENTA">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CUENTA">
+        <MappingFragment StoreEntitySet="CUENTA">
+          <ScalarProperty Name="COD_CUENTA" ColumnName="COD_CUENTA" />
+          <ScalarProperty Name="NOM_CUENTA" ColumnName="NOM_CUENTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="FECHA_CONTARTO" ColumnName="FECHA_CONTARTO" />
+          <ScalarProperty Name="ATTRIBUTE_37" ColumnName="ATTRIBUTE_37" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOJA_DE_TRABAJO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.HOJA_DE_TRABAJO">
+        <MappingFragment StoreEntitySet="HOJA_DE_TRABAJO">
+          <ScalarProperty Name="ID_HOJA" ColumnName="ID_HOJA" />
+          <ScalarProperty Name="SALARIO_HOR_NOMAL" ColumnName="SALARIO_HOR_NOMAL" />
+          <ScalarProperty Name="SALRIOHORASEXTRAS" ColumnName="SALRIOHORASEXTRAS" />
+          <ScalarProperty Name="HORASTRABAJADAS" ColumnName="HORASTRABAJADAS" />
+          <ScalarProperty Name="HORASEXTRAS" ColumnName="HORASEXTRAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVENTARIO_MATERIAL">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.INVENTARIO_MATERIAL">
+        <MappingFragment StoreEntitySet="INVENTARIO_MATERIAL">
+          <ScalarProperty Name="COD_MATERIAL" ColumnName="COD_MATERIAL" />
+          <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+          <ScalarProperty Name="NOM_MATERIAL" ColumnName="NOM_MATERIAL" />
+          <ScalarProperty Name="UNIDADES" ColumnName="UNIDADES" />
+          <ScalarProperty Name="EXISTENCIA_" ColumnName="EXISTENCIA_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KARDEX">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.KARDEX">
+        <MappingFragment StoreEntitySet="KARDEX">
+          <ScalarProperty Name="NUMKARDEX" ColumnName="NUMKARDEX" />
+          <ScalarProperty Name="COSTOUNITARIO" ColumnName="COSTOUNITARIO" />
+          <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+          <ScalarProperty Name="FECHA_DE_SALIDA" ColumnName="FECHA_DE_SALIDA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LINEA_DE_PLANILLA">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.LINEA_DE_PLANILLA">
+        <MappingFragment StoreEntitySet="LINEA_DE_PLANILLA">
+          <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PATRONO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PATRONO">
+        <MappingFragment StoreEntitySet="PATRONO">
+          <ScalarProperty Name="IDPATRONO" ColumnName="IDPATRONO" />
+          <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+          <ScalarProperty Name="ISSS" ColumnName="ISSS" />
+          <ScalarProperty Name="AFP" ColumnName="AFP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERIODO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PERIODO">
+        <MappingFragment StoreEntitySet="PERIODO">
+          <ScalarProperty Name="NUMPERIODO" ColumnName="NUMPERIODO" />
+          <ScalarProperty Name="DEBE_" ColumnName="DEBE_" />
+          <ScalarProperty Name="FIN_PERIODO" ColumnName="FIN_PERIODO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLANILLA">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PLANILLA">
+        <MappingFragment StoreEntitySet="PLANILLA">
+          <ScalarProperty Name="ID_PLANILLA" ColumnName="ID_PLANILLA" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+          <ScalarProperty Name="ID_HOJA" ColumnName="ID_HOJA" />
+          <ScalarProperty Name="FECHAPAGO" ColumnName="FECHAPAGO" />
+          <ScalarProperty Name="DE_ISS_TRABA" ColumnName="DE_ISS_TRABA" />
+          <ScalarProperty Name="DESCUENTOS" ColumnName="DESCUENTOS" />
+          <ScalarProperty Name="AFP_TRABAJADOR" ColumnName="AFP_TRABAJADOR" />
+          <ScalarProperty Name="TOTAL_PLANILLA" ColumnName="TOTAL_PLANILLA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO_EN_PROCESO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PRODUCTO_EN_PROCESO">
+        <MappingFragment StoreEntitySet="PRODUCTO_EN_PROCESO">
+          <ScalarProperty Name="CORRELATIVO_PROCE" ColumnName="CORRELATIVO_PROCE" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="FECHA_DE_INICIO" ColumnName="FECHA_DE_INICIO" />
+          <ScalarProperty Name="FECHA_DE_DESPACHO" ColumnName="FECHA_DE_DESPACHO" />
+          <ScalarProperty Name="CANTI_PROCESO" ColumnName="CANTI_PROCESO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO_TERMINADO">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PRODUCTO_TERMINADO">
+        <MappingFragment StoreEntitySet="PRODUCTO_TERMINADO">
+          <ScalarProperty Name="CORRELATIVO_PRODUCTO" ColumnName="CORRELATIVO_PRODUCTO" />
+          <ScalarProperty Name="NUMKARDEX" ColumnName="NUMKARDEX" />
+          <ScalarProperty Name="ID_COSMATERIAL" ColumnName="ID_COSMATERIAL" />
+          <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
+          <ScalarProperty Name="DESCRIPCION_DEL_PRODUCTO_TERMINADO" ColumnName="DESCRIPCION_DEL_PRODUCTO_TERMINADO" />
+          <ScalarProperty Name="EXISTENCIA_PRODUCTO" ColumnName="EXISTENCIA_PRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDOR">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PROVEEDOR">
+        <MappingFragment StoreEntitySet="PROVEEDOR">
+          <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+          <ScalarProperty Name="NOM_PROVEEDOR" ColumnName="NOM_PROVEEDOR" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION_PROVEEDOR" ColumnName="DIRECCION_PROVEEDOR" />
+          <ScalarProperty Name="NIT_PROVEEDOR" ColumnName="NIT_PROVEEDOR" />
+          <ScalarProperty Name="GIRO_DE_EMPRESA" ColumnName="GIRO_DE_EMPRESA" />
+          <ScalarProperty Name="NUM_IVA_" ColumnName="NUM_IVA_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REMESAS">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.REMESAS">
+        <MappingFragment StoreEntitySet="REMESAS">
+          <ScalarProperty Name="CORRELATIVO_CHEQUE_REMESA" ColumnName="CORRELATIVO_CHEQUE_REMESA" />
+          <ScalarProperty Name="CORRELATIVO_DOC" ColumnName="CORRELATIVO_DOC" />
+          <ScalarProperty Name="A_NOMBRE" ColumnName="A_NOMBRE" />
+          <ScalarProperty Name="CONCEPTO_REMESA" ColumnName="CONCEPTO_REMESA" />
+          <ScalarProperty Name="MONTO_REMESA" ColumnName="MONTO_REMESA" />
+          <ScalarProperty Name="ANULADO_REMESA" ColumnName="ANULADO_REMESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACCIONES">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.TRANSACCIONES">
+        <MappingFragment StoreEntitySet="TRANSACCIONES">
+          <ScalarProperty Name="NUM_TRANSACCION" ColumnName="NUM_TRANSACCION" />
+          <ScalarProperty Name="NUMPERIODO" ColumnName="NUMPERIODO" />
+          <ScalarProperty Name="COD_CUENTA" ColumnName="COD_CUENTA" />
+          <ScalarProperty Name="CORRELATIVO_CHEQUE" ColumnName="CORRELATIVO_CHEQUE" />
+          <ScalarProperty Name="ID_PLANILLA" ColumnName="ID_PLANILLA" />
+          <ScalarProperty Name="CONCEPTO" ColumnName="CONCEPTO" />
+          <ScalarProperty Name="CUENTA_CARGADA" ColumnName="CUENTA_CARGADA" />
+          <ScalarProperty Name="CUENTA_ABONAR" ColumnName="CUENTA_ABONAR" />
+          <ScalarProperty Name="MONTO_ABONADO" ColumnName="MONTO_ABONADO" />
+          <ScalarProperty Name="MONTO_CARGADO" ColumnName="MONTO_CARGADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VENTA">
+      <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.VENTA">
+        <MappingFragment StoreEntitySet="VENTA">
+          <ScalarProperty Name="CORRELATIVO_DOC" ColumnName="CORRELATIVO_DOC" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="NUMKARDEX" ColumnName="NUMKARDEX" />
+          <ScalarProperty Name="TIPO_DOCU_VENTA" ColumnName="TIPO_DOCU_VENTA" />
+          <ScalarProperty Name="TIPO_PAGO" ColumnName="TIPO_PAGO" />
+          <ScalarProperty Name="CONCEPTO_DE_VENTA" ColumnName="CONCEPTO_DE_VENTA" />
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+          <ScalarProperty Name="GRAVADAS" ColumnName="GRAVADAS" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="IVA_PERSIVIDO" ColumnName="IVA_PERSIVIDO" />
+          <ScalarProperty Name="IVA_RETENIDO" ColumnName="IVA_RETENIDO" />
+          <ScalarProperty Name="VENTAS_EXENTAS" ColumnName="VENTAS_EXENTAS" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FABRICA" TypeName="DB_A50304_jorgemarro91Model.FABRICA" StoreEntitySet="FABRICA">
+      <EndProperty Name="INVENTARIO_MATERIAL">
+        <ScalarProperty Name="COD_MATERIAL" ColumnName="COD_MATERIAL" />
+      </EndProperty>
+      <EndProperty Name="PRODUCTO_EN_PROCESO">
+        <ScalarProperty Name="CORRELATIVO_PROCE" ColumnName="CORRELATIVO_PROCE" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TRANSACION_VENTA" TypeName="DB_A50304_jorgemarro91Model.TRANSACION_VENTA" StoreEntitySet="TRANSACION_VENTA">
+      <EndProperty Name="TRANSACCIONES">
+        <ScalarProperty Name="NUM_TRANSACCION" ColumnName="NUM_TRANSACCION" />
+      </EndProperty>
+      <EndProperty Name="VENTA">
+        <ScalarProperty Name="CORRELATIVO_DOC" ColumnName="CORRELATIVO_DOC" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TRANSACIONES_COMPRA" TypeName="DB_A50304_jorgemarro91Model.TRANSACIONES_COMPRA" StoreEntitySet="TRANSACIONES_COMPRA">
+      <EndProperty Name="COMPRA">
+        <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+      </EndProperty>
+      <EndProperty Name="TRANSACCIONES">
+        <ScalarProperty Name="NUM_TRANSACCION" ColumnName="NUM_TRANSACCION" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TRANSFORMA" TypeName="DB_A50304_jorgemarro91Model.TRANSFORMA" StoreEntitySet="TRANSFORMA">
+      <EndProperty Name="PRODUCTO_EN_PROCESO">
+        <ScalarProperty Name="CORRELATIVO_PROCE" ColumnName="CORRELATIVO_PROCE" />
+      </EndProperty>
+      <EndProperty Name="PRODUCTO_TERMINADO">
+        <ScalarProperty Name="CORRELATIVO_PRODUCTO" ColumnName="CORRELATIVO_PRODUCTO" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

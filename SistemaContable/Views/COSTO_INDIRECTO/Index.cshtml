@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SistemaContable.Models.COSTO_INDIRECTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.COSTO_DE_MANO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OTROS_COSTOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLANILLA.DUI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.COSTO_DE_MANO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OTROS_COSTOS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLANILLA.DUI)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_COSTO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_COSTO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_COSTO })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model SistemaContable.Models.HOJA_DE_TRABAJO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HOJA_DE_TRABAJO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARIO_HOR_NOMAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALARIO_HOR_NOMAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALRIOHORASEXTRAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALRIOHORASEXTRAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HORASTRABAJADAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HORASTRABAJADAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HORASEXTRAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HORASEXTRAS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_HOJA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

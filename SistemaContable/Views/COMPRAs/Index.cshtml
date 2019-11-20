@@ -1,0 +1,117 @@
+﻿@model IEnumerable<SistemaContable.Models.COMPRA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_DOCU_COMPRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_PAGO_COMPRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_EMISION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONCEPTO_COMPRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_DE_PAGO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SUMA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL_COMPRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPRA_EXENTAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RETENCION_RENTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BONIFICACIONES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RETENCION_DE_IVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROVEEDOR.NOM_PROVEEDOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COSTO_INDIRECTO.ID_COSTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COTOS_DE_MATERIAL.ID_COSMATERIAL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_DOCU_COMPRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_PAGO_COMPRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_EMISION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONCEPTO_COMPRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_DE_PAGO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SUMA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTAL_COMPRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPRA_EXENTAS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RETENCION_RENTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BONIFICACIONES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RETENCION_DE_IVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROVEEDOR.NOM_PROVEEDOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COSTO_INDIRECTO.ID_COSTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COTOS_DE_MATERIAL.ID_COSMATERIAL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CORRELATIVO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CORRELATIVO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CORRELATIVO })
+        </td>
+    </tr>
+}
+
+</table>

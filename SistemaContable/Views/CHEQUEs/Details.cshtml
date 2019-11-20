@@ -1,0 +1,66 @@
+﻿@model SistemaContable.Models.CHEQUE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CHEQUE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONCEPTO_CHEQUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONCEPTO_CHEQUE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANULADO_CHEQUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANULADO_CHEQUE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROVEEDOR.NOM_PROVEEDOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROVEEDOR.NOM_PROVEEDOR)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CORRELATIVO_CHEQUE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

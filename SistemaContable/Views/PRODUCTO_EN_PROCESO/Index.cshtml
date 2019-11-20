@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SistemaContable.Models.PRODUCTO_EN_PROCESO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_DE_INICIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_DE_DESPACHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CANTI_PROCESO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATALOGO_DE_PRODUCTO.DESCRIPCION_PRODUCTO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_DE_INICIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_DE_DESPACHO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CANTI_PROCESO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATALOGO_DE_PRODUCTO.DESCRIPCION_PRODUCTO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CORRELATIVO_PROCE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CORRELATIVO_PROCE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CORRELATIVO_PROCE })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SistemaContable.Models.CATALOGO_DE_PRODUCTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.COSTO_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_PRODUCTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_GANACIA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.COSTO_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPCION_PRODUCTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PORCENTAJE_GANACIA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PRODUCTO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PRODUCTO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PRODUCTO })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SistemaContable.Models.TRANSACCIONES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CONCEPTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUENTA_CARGADA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUENTA_ABONAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTO_ABONADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTO_CARGADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHEQUE.ID_LINEA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUENTA.NOM_CUENTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERIODO.NUMPERIODO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLANILLA.DUI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONCEPTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUENTA_CARGADA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUENTA_ABONAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTO_ABONADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTO_CARGADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHEQUE.ID_LINEA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUENTA.NOM_CUENTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERIODO.NUMPERIODO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLANILLA.DUI)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NUM_TRANSACCION }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NUM_TRANSACCION }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NUM_TRANSACCION })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model SistemaContable.Models.EMPLEADO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPLEADO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_CONTARTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_CONTARTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ATTRIBUTE_37)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ATTRIBUTE_37)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DUI }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

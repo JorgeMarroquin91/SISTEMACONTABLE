@@ -1,0 +1,42 @@
+﻿@model SistemaContable.Models.PATRONO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PATRONO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ISSS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISSS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AFP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AFP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDPATRONO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

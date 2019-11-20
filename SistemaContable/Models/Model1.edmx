@@ -1,0 +1,1846 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A50304_jorgemarro91Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CATALOGO_DE_PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="COSTO_" Type="float" Nullable="false" />
+          <Property Name="DESCRIPCION_PRODUCTO" Type="char" MaxLength="250" Nullable="false" />
+          <Property Name="PORCENTAJE_GANACIA" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHEQUE">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_CHEQUE" />
+          </Key>
+          <Property Name="CORRELATIVO_CHEQUE" Type="int" Nullable="false" />
+          <Property Name="COD_PROVEEDOR" Type="int" />
+          <Property Name="ID_LINEA" Type="char" MaxLength="10" />
+          <Property Name="NOMBRE" Type="char" MaxLength="150" Nullable="false" />
+          <Property Name="CONCEPTO_CHEQUE" Type="char" MaxLength="500" />
+          <Property Name="MONTO" Type="float" Nullable="false" />
+          <Property Name="ANULADO_CHEQUE" Type="bit" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DUI_CLIENTE" Type="char" MaxLength="15" />
+          <Property Name="NOMBRE" Type="char" MaxLength="150" />
+          <Property Name="TELEFO" Type="char" MaxLength="10" />
+          <Property Name="NIT" Type="char" MaxLength="15" />
+          <Property Name="NUMERO_REGISTRO" Type="char" MaxLength="15" />
+          <Property Name="GIRO" Type="char" MaxLength="100" />
+          <Property Name="DIRECCION" Type="char" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="COMPRA">
+          <Key>
+            <PropertyRef Name="CORRELATIVO" />
+          </Key>
+          <Property Name="CORRELATIVO" Type="int" Nullable="false" />
+          <Property Name="ID_COSMATERIAL" Type="int" />
+          <Property Name="ID_COSTO" Type="char" MaxLength="10" />
+          <Property Name="COD_PROVEEDOR" Type="int" />
+          <Property Name="TIPO_DOCU_COMPRA" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TIPO_PAGO_COMPRA" Type="char" MaxLength="10" />
+          <Property Name="FECHA_EMISION" Type="datetime" Nullable="false" />
+          <Property Name="CONCEPTO_COMPRA" Type="char" MaxLength="500" Nullable="false" />
+          <Property Name="TIPO_DE_PAGO" Type="char" MaxLength="100" Nullable="false" />
+          <Property Name="SUMA" Type="float" Nullable="false" />
+          <Property Name="IVA" Type="float" Nullable="false" />
+          <Property Name="TOTAL_COMPRA" Type="float" Nullable="false" />
+          <Property Name="COMPRA_EXENTAS" Type="float" />
+          <Property Name="RETENCION_RENTA" Type="float" />
+          <Property Name="BONIFICACIONES" Type="float" />
+          <Property Name="RETENCION_DE_IVA" Type="float" />
+        </EntityType>
+        <EntityType Name="COSTO_INDIRECTO">
+          <Key>
+            <PropertyRef Name="ID_COSTO" />
+          </Key>
+          <Property Name="ID_COSTO" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_PLANILLA" Type="int" />
+          <Property Name="COSTO_DE_MANO" Type="float" />
+          <Property Name="OTROS_COSTOS" Type="float" />
+        </EntityType>
+        <EntityType Name="COTOS_DE_MATERIAL">
+          <Key>
+            <PropertyRef Name="ID_COSMATERIAL" />
+          </Key>
+          <Property Name="ID_COSMATERIAL" Type="int" Nullable="false" />
+          <Property Name="FECHA_DE_INGRESO" Type="datetime" />
+          <Property Name="COSTO_DE_COMPRA" Type="float" Nullable="false" />
+          <Property Name="COSTO_UNITARIO" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUENTA">
+          <Key>
+            <PropertyRef Name="COD_CUENTA" />
+          </Key>
+          <Property Name="COD_CUENTA" Type="char" MaxLength="100" Nullable="false" />
+          <Property Name="NOM_CUENTA" Type="char" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="DUI" />
+          </Key>
+          <Property Name="DUI" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="NOMBRE" Type="char" MaxLength="150" Nullable="false" />
+          <Property Name="APELLIDO" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CARGO" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="FECHA_CONTARTO" Type="datetime" />
+          <Property Name="ATTRIBUTE_37" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="FABRICA">
+          <Key>
+            <PropertyRef Name="COD_MATERIAL" />
+            <PropertyRef Name="CORRELATIVO_PROCE" />
+          </Key>
+          <Property Name="COD_MATERIAL" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CORRELATIVO_PROCE" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOJA_DE_TRABAJO">
+          <Key>
+            <PropertyRef Name="ID_HOJA" />
+          </Key>
+          <Property Name="ID_HOJA" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="SALARIO_HOR_NOMAL" Type="float" Nullable="false" />
+          <Property Name="SALRIOHORASEXTRAS" Type="float" />
+          <Property Name="HORASTRABAJADAS" Type="int" />
+          <Property Name="HORASEXTRAS" Type="float" />
+        </EntityType>
+        <EntityType Name="INVENTARIO_MATERIAL">
+          <Key>
+            <PropertyRef Name="COD_MATERIAL" />
+          </Key>
+          <Property Name="COD_MATERIAL" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CORRELATIVO" Type="int" />
+          <Property Name="NOM_MATERIAL" Type="char" MaxLength="200" Nullable="false" />
+          <Property Name="UNIDADES" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="EXISTENCIA_" Type="int" />
+        </EntityType>
+        <EntityType Name="KARDEX">
+          <Key>
+            <PropertyRef Name="NUMKARDEX" />
+          </Key>
+          <Property Name="NUMKARDEX" Type="int" Nullable="false" />
+          <Property Name="COSTOUNITARIO" Type="float" />
+          <Property Name="FECHA_INGRESO" Type="datetime" />
+          <Property Name="FECHA_DE_SALIDA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LINEA_DE_PLANILLA">
+          <Key>
+            <PropertyRef Name="ID_LINEA" />
+          </Key>
+          <Property Name="ID_LINEA" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PATRONO">
+          <Key>
+            <PropertyRef Name="IDPATRONO" />
+          </Key>
+          <Property Name="IDPATRONO" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_LINEA" Type="char" MaxLength="10" />
+          <Property Name="ISSS" Type="float" Nullable="false" />
+          <Property Name="AFP" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERIODO">
+          <Key>
+            <PropertyRef Name="NUMPERIODO" />
+          </Key>
+          <Property Name="NUMPERIODO" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DEBE_" Type="datetime" />
+          <Property Name="FIN_PERIODO" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PLANILLA">
+          <Key>
+            <PropertyRef Name="ID_PLANILLA" />
+          </Key>
+          <Property Name="ID_PLANILLA" Type="int" Nullable="false" />
+          <Property Name="DUI" Type="char" MaxLength="10" />
+          <Property Name="ID_LINEA" Type="char" MaxLength="10" />
+          <Property Name="ID_HOJA" Type="char" MaxLength="10" />
+          <Property Name="FECHAPAGO" Type="datetime" Nullable="false" />
+          <Property Name="DE_ISS_TRABA" Type="float" Nullable="false" />
+          <Property Name="DESCUENTOS" Type="float" />
+          <Property Name="AFP_TRABAJADOR" Type="float" />
+          <Property Name="TOTAL_PLANILLA" Type="float" />
+        </EntityType>
+        <EntityType Name="PRODUCTO_EN_PROCESO">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_PROCE" />
+          </Key>
+          <Property Name="CORRELATIVO_PROCE" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="char" MaxLength="10" />
+          <Property Name="FECHA_DE_INICIO" Type="datetime" />
+          <Property Name="FECHA_DE_DESPACHO" Type="datetime" />
+          <Property Name="CANTI_PROCESO" Type="int" />
+        </EntityType>
+        <EntityType Name="PRODUCTO_TERMINADO">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_PRODUCTO" />
+          </Key>
+          <Property Name="CORRELATIVO_PRODUCTO" Type="int" Nullable="false" />
+          <Property Name="NUMKARDEX" Type="int" />
+          <Property Name="ID_COSMATERIAL" Type="int" />
+          <Property Name="ID_COSTO" Type="char" MaxLength="10" />
+          <Property Name="DESCRIPCION_DEL_PRODUCTO_TERMINADO" Type="char" MaxLength="1000" Nullable="false" />
+          <Property Name="EXISTENCIA_PRODUCTO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROVEEDOR">
+          <Key>
+            <PropertyRef Name="COD_PROVEEDOR" />
+          </Key>
+          <Property Name="COD_PROVEEDOR" Type="int" Nullable="false" />
+          <Property Name="NOM_PROVEEDOR" Type="char" MaxLength="256" Nullable="false" />
+          <Property Name="TELEFONO" Type="char" MaxLength="10" />
+          <Property Name="DIRECCION_PROVEEDOR" Type="char" MaxLength="300" />
+          <Property Name="NIT_PROVEEDOR" Type="char" MaxLength="15" />
+          <Property Name="GIRO_DE_EMPRESA" Type="char" MaxLength="300" />
+          <Property Name="NUM_IVA_" Type="int" />
+        </EntityType>
+        <EntityType Name="REMESAS">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_CHEQUE_REMESA" />
+          </Key>
+          <Property Name="CORRELATIVO_CHEQUE_REMESA" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="CORRELATIVO_DOC" Type="char" MaxLength="10" />
+          <Property Name="A_NOMBRE" Type="char" MaxLength="150" Nullable="false" />
+          <Property Name="CONCEPTO_REMESA" Type="char" MaxLength="500" Nullable="false" />
+          <Property Name="MONTO_REMESA" Type="float" Nullable="false" />
+          <Property Name="ANULADO_REMESA" Type="bit" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'DB_A50304_jorgemarro91.dbo.RESUMENDECUENTAS' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="RESUMENDECUENTAS">
+          <Property Name="NUMPERIODO" Type="char" MaxLength="10" />
+          <Property Name="SALDO_DEUDOR" Type="float" />
+          <Property Name="SALDO_ACREEDOR" Type="float" />
+          <Property Name="SALDO_DINAL" Type="float" />
+        </EntityType>-->
+        <EntityType Name="TRANSACCIONES">
+          <Key>
+            <PropertyRef Name="NUM_TRANSACCION" />
+          </Key>
+          <Property Name="NUM_TRANSACCION" Type="char" MaxLength="100" Nullable="false" />
+          <Property Name="NUMPERIODO" Type="char" MaxLength="10" />
+          <Property Name="COD_CUENTA" Type="char" MaxLength="100" />
+          <Property Name="CORRELATIVO_CHEQUE" Type="int" />
+          <Property Name="ID_PLANILLA" Type="int" />
+          <Property Name="CONCEPTO" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CUENTA_CARGADA" Type="char" MaxLength="200" Nullable="false" />
+          <Property Name="CUENTA_ABONAR" Type="char" MaxLength="200" Nullable="false" />
+          <Property Name="MONTO_ABONADO" Type="float" Nullable="false" />
+          <Property Name="MONTO_CARGADO" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANSACION_VENTA">
+          <Key>
+            <PropertyRef Name="NUM_TRANSACCION" />
+            <PropertyRef Name="CORRELATIVO_DOC" />
+          </Key>
+          <Property Name="NUM_TRANSACCION" Type="char" MaxLength="100" Nullable="false" />
+          <Property Name="CORRELATIVO_DOC" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANSACIONES_COMPRA">
+          <Key>
+            <PropertyRef Name="NUM_TRANSACCION" />
+            <PropertyRef Name="CORRELATIVO" />
+          </Key>
+          <Property Name="NUM_TRANSACCION" Type="char" MaxLength="100" Nullable="false" />
+          <Property Name="CORRELATIVO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANSFORMA">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_PROCE" />
+            <PropertyRef Name="CORRELATIVO_PRODUCTO" />
+          </Key>
+          <Property Name="CORRELATIVO_PROCE" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CORRELATIVO_PRODUCTO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_DOC" />
+          </Key>
+          <Property Name="CORRELATIVO_DOC" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="char" MaxLength="10" />
+          <Property Name="ID_CLIENTE" Type="char" MaxLength="10" />
+          <Property Name="NUMKARDEX" Type="int" />
+          <Property Name="TIPO_DOCU_VENTA" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TIPO_PAGO" Type="char" MaxLength="10" />
+          <Property Name="CONCEPTO_DE_VENTA" Type="char" MaxLength="400" />
+          <Property Name="SUBTOTAL" Type="float" Nullable="false" />
+          <Property Name="DESCUENTO" Type="float" />
+          <Property Name="GRAVADAS" Type="float" />
+          <Property Name="IVA" Type="float" />
+          <Property Name="IVA_PERSIVIDO" Type="float" />
+          <Property Name="IVA_RETENIDO" Type="float" />
+          <Property Name="VENTAS_EXENTAS" Type="float" />
+          <Property Name="TOTAL" Type="float" />
+        </EntityType>
+        <Association Name="FK_CHEQUE_RELATIONS_LINEA_DE">
+          <End Role="LINEA_DE_PLANILLA" Type="Self.LINEA_DE_PLANILLA" Multiplicity="0..1" />
+          <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINEA_DE_PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Principal>
+            <Dependent Role="CHEQUE">
+              <PropertyRef Name="ID_LINEA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHEQUE_RELATIONS_PROVEEDO">
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+          <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDOR">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="CHEQUE">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_RELATIONS_REMESAS">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPRA_REFERENCE_PROVEEDO">
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDOR">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPRA_RELATIONS_COSTO_IN">
+          <End Role="COSTO_INDIRECTO" Type="Self.COSTO_INDIRECTO" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COSTO_INDIRECTO">
+              <PropertyRef Name="ID_COSTO" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="ID_COSTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPRA_RELATIONS_COTOS_DE">
+          <End Role="COTOS_DE_MATERIAL" Type="Self.COTOS_DE_MATERIAL" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COTOS_DE_MATERIAL">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COSTO_IN_RELATIONS_PLANILLA">
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="0..1" />
+          <End Role="COSTO_INDIRECTO" Type="Self.COSTO_INDIRECTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLANILLA">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Principal>
+            <Dependent Role="COSTO_INDIRECTO">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FABRICA_FABRICA_INVENTAR">
+          <End Role="INVENTARIO_MATERIAL" Type="Self.INVENTARIO_MATERIAL" Multiplicity="1" />
+          <End Role="FABRICA" Type="Self.FABRICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INVENTARIO_MATERIAL">
+              <PropertyRef Name="COD_MATERIAL" />
+            </Principal>
+            <Dependent Role="FABRICA">
+              <PropertyRef Name="COD_MATERIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FABRICA_FABRICA2_PRODUCTO">
+          <End Role="PRODUCTO_EN_PROCESO" Type="Self.PRODUCTO_EN_PROCESO" Multiplicity="1" />
+          <End Role="FABRICA" Type="Self.FABRICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO_EN_PROCESO">
+              <PropertyRef Name="CORRELATIVO_PROCE" />
+            </Principal>
+            <Dependent Role="FABRICA">
+              <PropertyRef Name="CORRELATIVO_PROCE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INVENTAR_RELATIONS_COMPRA">
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="0..1" />
+          <End Role="INVENTARIO_MATERIAL" Type="Self.INVENTARIO_MATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPRA">
+              <PropertyRef Name="CORRELATIVO" />
+            </Principal>
+            <Dependent Role="INVENTARIO_MATERIAL">
+              <PropertyRef Name="CORRELATIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KARDEX_RELATIONS_VENTA">
+          <End Role="KARDEX" Type="Self.KARDEX" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KARDEX">
+              <PropertyRef Name="NUMKARDEX" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="NUMKARDEX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PATRONO_RELATIONS_LINEA_DE">
+          <End Role="LINEA_DE_PLANILLA" Type="Self.LINEA_DE_PLANILLA" Multiplicity="0..1" />
+          <End Role="PATRONO" Type="Self.PATRONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINEA_DE_PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Principal>
+            <Dependent Role="PATRONO">
+              <PropertyRef Name="ID_LINEA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANILLA_RELATIONS_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="DUI" />
+            </Principal>
+            <Dependent Role="PLANILLA">
+              <PropertyRef Name="DUI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANILLA_RELATIONS_HOJA_DE_">
+          <End Role="HOJA_DE_TRABAJO" Type="Self.HOJA_DE_TRABAJO" Multiplicity="0..1" />
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOJA_DE_TRABAJO">
+              <PropertyRef Name="ID_HOJA" />
+            </Principal>
+            <Dependent Role="PLANILLA">
+              <PropertyRef Name="ID_HOJA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANILLA_RELATIONS_LINEA_DE">
+          <End Role="LINEA_DE_PLANILLA" Type="Self.LINEA_DE_PLANILLA" Multiplicity="0..1" />
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINEA_DE_PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Principal>
+            <Dependent Role="PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_REFERENCE_CATALOGO">
+          <End Role="CATALOGO_DE_PRODUCTO" Type="Self.CATALOGO_DE_PRODUCTO" Multiplicity="0..1" />
+          <End Role="PRODUCTO_EN_PROCESO" Type="Self.PRODUCTO_EN_PROCESO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATALOGO_DE_PRODUCTO">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Principal>
+            <Dependent Role="PRODUCTO_EN_PROCESO">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_RELATIONS_COSTO_IN">
+          <End Role="COSTO_INDIRECTO" Type="Self.COSTO_INDIRECTO" Multiplicity="0..1" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COSTO_INDIRECTO">
+              <PropertyRef Name="ID_COSTO" />
+            </Principal>
+            <Dependent Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="ID_COSTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_RELATIONS_COTOS_DE">
+          <End Role="COTOS_DE_MATERIAL" Type="Self.COTOS_DE_MATERIAL" Multiplicity="0..1" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COTOS_DE_MATERIAL">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Principal>
+            <Dependent Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_RELATIONS_KARDEX">
+          <End Role="KARDEX" Type="Self.KARDEX" Multiplicity="0..1" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KARDEX">
+              <PropertyRef Name="NUMKARDEX" />
+            </Principal>
+            <Dependent Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="NUMKARDEX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REMESAS_RELATIONS_VENTA">
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="0..1" />
+          <End Role="REMESAS" Type="Self.REMESAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="CORRELATIVO_DOC" />
+            </Principal>
+            <Dependent Role="REMESAS">
+              <PropertyRef Name="CORRELATIVO_DOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'DB_A50304_jorgemarro91.dbo.RESUMENDECUENTAS', pero no se encuentra la tabla.
+        <Association Name="FK_RESUMEND_RELATIONS_PERIODO" />-->
+        <Association Name="FK_TRANSACC_RELATIONS_CHEQUE">
+          <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHEQUE">
+              <PropertyRef Name="CORRELATIVO_CHEQUE" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="CORRELATIVO_CHEQUE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_RELATIONS_CUENTA">
+          <End Role="CUENTA" Type="Self.CUENTA" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUENTA">
+              <PropertyRef Name="COD_CUENTA" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="COD_CUENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_RELATIONS_PERIODO">
+          <End Role="PERIODO" Type="Self.PERIODO" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERIODO">
+              <PropertyRef Name="NUMPERIODO" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="NUMPERIODO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_SE_REGIST_PLANILLA">
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLANILLA">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACI_RELATIONS_COMPRA">
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="1" />
+          <End Role="TRANSACIONES_COMPRA" Type="Self.TRANSACIONES_COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPRA">
+              <PropertyRef Name="CORRELATIVO" />
+            </Principal>
+            <Dependent Role="TRANSACIONES_COMPRA">
+              <PropertyRef Name="CORRELATIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACI_RELATIONS_TRANSACC">
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="1" />
+          <End Role="TRANSACION_VENTA" Type="Self.TRANSACION_VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSACCIONES">
+              <PropertyRef Name="NUM_TRANSACCION" />
+            </Principal>
+            <Dependent Role="TRANSACION_VENTA">
+              <PropertyRef Name="NUM_TRANSACCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACI_RELATIONS_VENTA">
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="1" />
+          <End Role="TRANSACION_VENTA" Type="Self.TRANSACION_VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="CORRELATIVO_DOC" />
+            </Principal>
+            <Dependent Role="TRANSACION_VENTA">
+              <PropertyRef Name="CORRELATIVO_DOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACI_TRANSACIO_TRANSACC">
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="1" />
+          <End Role="TRANSACIONES_COMPRA" Type="Self.TRANSACIONES_COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSACCIONES">
+              <PropertyRef Name="NUM_TRANSACCION" />
+            </Principal>
+            <Dependent Role="TRANSACIONES_COMPRA">
+              <PropertyRef Name="NUM_TRANSACCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSFOR_PRODUCTO__PRODUCTO">
+          <End Role="PRODUCTO_EN_PROCESO" Type="Self.PRODUCTO_EN_PROCESO" Multiplicity="1" />
+          <End Role="TRANSFORMA" Type="Self.TRANSFORMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO_EN_PROCESO">
+              <PropertyRef Name="CORRELATIVO_PROCE" />
+            </Principal>
+            <Dependent Role="TRANSFORMA">
+              <PropertyRef Name="CORRELATIVO_PROCE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSFOR_TRANSFORM_PRODUCTO">
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="1" />
+          <End Role="TRANSFORMA" Type="Self.TRANSFORMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="CORRELATIVO_PRODUCTO" />
+            </Principal>
+            <Dependent Role="TRANSFORMA">
+              <PropertyRef Name="CORRELATIVO_PRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_RELATIONS_CATALOGO">
+          <End Role="CATALOGO_DE_PRODUCTO" Type="Self.CATALOGO_DE_PRODUCTO" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATALOGO_DE_PRODUCTO">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A50304_jorgemarro91ModelStoreContainer">
+          <EntitySet Name="CATALOGO_DE_PRODUCTO" EntityType="Self.CATALOGO_DE_PRODUCTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHEQUE" EntityType="Self.CHEQUE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPRA" EntityType="Self.COMPRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COSTO_INDIRECTO" EntityType="Self.COSTO_INDIRECTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COTOS_DE_MATERIAL" EntityType="Self.COTOS_DE_MATERIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUENTA" EntityType="Self.CUENTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FABRICA" EntityType="Self.FABRICA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOJA_DE_TRABAJO" EntityType="Self.HOJA_DE_TRABAJO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INVENTARIO_MATERIAL" EntityType="Self.INVENTARIO_MATERIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KARDEX" EntityType="Self.KARDEX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LINEA_DE_PLANILLA" EntityType="Self.LINEA_DE_PLANILLA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PATRONO" EntityType="Self.PATRONO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERIODO" EntityType="Self.PERIODO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PLANILLA" EntityType="Self.PLANILLA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO_EN_PROCESO" EntityType="Self.PRODUCTO_EN_PROCESO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO_TERMINADO" EntityType="Self.PRODUCTO_TERMINADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REMESAS" EntityType="Self.REMESAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANSACCIONES" EntityType="Self.TRANSACCIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANSACION_VENTA" EntityType="Self.TRANSACION_VENTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANSACIONES_COMPRA" EntityType="Self.TRANSACIONES_COMPRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANSFORMA" EntityType="Self.TRANSFORMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENTA" EntityType="Self.VENTA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CHEQUE_RELATIONS_LINEA_DE" Association="Self.FK_CHEQUE_RELATIONS_LINEA_DE">
+            <End Role="LINEA_DE_PLANILLA" EntitySet="LINEA_DE_PLANILLA" />
+            <End Role="CHEQUE" EntitySet="CHEQUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHEQUE_RELATIONS_PROVEEDO" Association="Self.FK_CHEQUE_RELATIONS_PROVEEDO">
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="CHEQUE" EntitySet="CHEQUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_RELATIONS_REMESAS" Association="Self.FK_CLIENTE_RELATIONS_REMESAS">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPRA_REFERENCE_PROVEEDO" Association="Self.FK_COMPRA_REFERENCE_PROVEEDO">
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPRA_RELATIONS_COSTO_IN" Association="Self.FK_COMPRA_RELATIONS_COSTO_IN">
+            <End Role="COSTO_INDIRECTO" EntitySet="COSTO_INDIRECTO" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPRA_RELATIONS_COTOS_DE" Association="Self.FK_COMPRA_RELATIONS_COTOS_DE">
+            <End Role="COTOS_DE_MATERIAL" EntitySet="COTOS_DE_MATERIAL" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COSTO_IN_RELATIONS_PLANILLA" Association="Self.FK_COSTO_IN_RELATIONS_PLANILLA">
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+            <End Role="COSTO_INDIRECTO" EntitySet="COSTO_INDIRECTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FABRICA_FABRICA_INVENTAR" Association="Self.FK_FABRICA_FABRICA_INVENTAR">
+            <End Role="INVENTARIO_MATERIAL" EntitySet="INVENTARIO_MATERIAL" />
+            <End Role="FABRICA" EntitySet="FABRICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FABRICA_FABRICA2_PRODUCTO" Association="Self.FK_FABRICA_FABRICA2_PRODUCTO">
+            <End Role="PRODUCTO_EN_PROCESO" EntitySet="PRODUCTO_EN_PROCESO" />
+            <End Role="FABRICA" EntitySet="FABRICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INVENTAR_RELATIONS_COMPRA" Association="Self.FK_INVENTAR_RELATIONS_COMPRA">
+            <End Role="COMPRA" EntitySet="COMPRA" />
+            <End Role="INVENTARIO_MATERIAL" EntitySet="INVENTARIO_MATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KARDEX_RELATIONS_VENTA" Association="Self.FK_KARDEX_RELATIONS_VENTA">
+            <End Role="KARDEX" EntitySet="KARDEX" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PATRONO_RELATIONS_LINEA_DE" Association="Self.FK_PATRONO_RELATIONS_LINEA_DE">
+            <End Role="LINEA_DE_PLANILLA" EntitySet="LINEA_DE_PLANILLA" />
+            <End Role="PATRONO" EntitySet="PATRONO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANILLA_RELATIONS_EMPLEADO" Association="Self.FK_PLANILLA_RELATIONS_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANILLA_RELATIONS_HOJA_DE_" Association="Self.FK_PLANILLA_RELATIONS_HOJA_DE_">
+            <End Role="HOJA_DE_TRABAJO" EntitySet="HOJA_DE_TRABAJO" />
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANILLA_RELATIONS_LINEA_DE" Association="Self.FK_PLANILLA_RELATIONS_LINEA_DE">
+            <End Role="LINEA_DE_PLANILLA" EntitySet="LINEA_DE_PLANILLA" />
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_REFERENCE_CATALOGO" Association="Self.FK_PRODUCTO_REFERENCE_CATALOGO">
+            <End Role="CATALOGO_DE_PRODUCTO" EntitySet="CATALOGO_DE_PRODUCTO" />
+            <End Role="PRODUCTO_EN_PROCESO" EntitySet="PRODUCTO_EN_PROCESO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_RELATIONS_COSTO_IN" Association="Self.FK_PRODUCTO_RELATIONS_COSTO_IN">
+            <End Role="COSTO_INDIRECTO" EntitySet="COSTO_INDIRECTO" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_RELATIONS_COTOS_DE" Association="Self.FK_PRODUCTO_RELATIONS_COTOS_DE">
+            <End Role="COTOS_DE_MATERIAL" EntitySet="COTOS_DE_MATERIAL" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_RELATIONS_KARDEX" Association="Self.FK_PRODUCTO_RELATIONS_KARDEX">
+            <End Role="KARDEX" EntitySet="KARDEX" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REMESAS_RELATIONS_VENTA" Association="Self.FK_REMESAS_RELATIONS_VENTA">
+            <End Role="VENTA" EntitySet="VENTA" />
+            <End Role="REMESAS" EntitySet="REMESAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_RELATIONS_CHEQUE" Association="Self.FK_TRANSACC_RELATIONS_CHEQUE">
+            <End Role="CHEQUE" EntitySet="CHEQUE" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_RELATIONS_CUENTA" Association="Self.FK_TRANSACC_RELATIONS_CUENTA">
+            <End Role="CUENTA" EntitySet="CUENTA" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_RELATIONS_PERIODO" Association="Self.FK_TRANSACC_RELATIONS_PERIODO">
+            <End Role="PERIODO" EntitySet="PERIODO" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_SE_REGIST_PLANILLA" Association="Self.FK_TRANSACC_SE_REGIST_PLANILLA">
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACI_RELATIONS_COMPRA" Association="Self.FK_TRANSACI_RELATIONS_COMPRA">
+            <End Role="COMPRA" EntitySet="COMPRA" />
+            <End Role="TRANSACIONES_COMPRA" EntitySet="TRANSACIONES_COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACI_RELATIONS_TRANSACC" Association="Self.FK_TRANSACI_RELATIONS_TRANSACC">
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+            <End Role="TRANSACION_VENTA" EntitySet="TRANSACION_VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACI_RELATIONS_VENTA" Association="Self.FK_TRANSACI_RELATIONS_VENTA">
+            <End Role="VENTA" EntitySet="VENTA" />
+            <End Role="TRANSACION_VENTA" EntitySet="TRANSACION_VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACI_TRANSACIO_TRANSACC" Association="Self.FK_TRANSACI_TRANSACIO_TRANSACC">
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+            <End Role="TRANSACIONES_COMPRA" EntitySet="TRANSACIONES_COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSFOR_PRODUCTO__PRODUCTO" Association="Self.FK_TRANSFOR_PRODUCTO__PRODUCTO">
+            <End Role="PRODUCTO_EN_PROCESO" EntitySet="PRODUCTO_EN_PROCESO" />
+            <End Role="TRANSFORMA" EntitySet="TRANSFORMA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSFOR_TRANSFORM_PRODUCTO" Association="Self.FK_TRANSFOR_TRANSFORM_PRODUCTO">
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+            <End Role="TRANSFORMA" EntitySet="TRANSFORMA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_RELATIONS_CATALOGO" Association="Self.FK_VENTA_RELATIONS_CATALOGO">
+            <End Role="CATALOGO_DE_PRODUCTO" EntitySet="CATALOGO_DE_PRODUCTO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A50304_jorgemarro91Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CATALOGO_DE_PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="COSTO_" Type="Double" Nullable="false" />
+          <Property Name="DESCRIPCION_PRODUCTO" Type="String" MaxLength="250" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PORCENTAJE_GANACIA" Type="Double" Nullable="false" />
+          <NavigationProperty Name="PRODUCTO_EN_PROCESO" Relationship="Self.FK_PRODUCTO_REFERENCE_CATALOGO" FromRole="CATALOGO_DE_PRODUCTO" ToRole="PRODUCTO_EN_PROCESO" />
+          <NavigationProperty Name="VENTA" Relationship="Self.FK_VENTA_RELATIONS_CATALOGO" FromRole="CATALOGO_DE_PRODUCTO" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="CHEQUE">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_CHEQUE" />
+          </Key>
+          <Property Name="CORRELATIVO_CHEQUE" Type="Int32" Nullable="false" />
+          <Property Name="COD_PROVEEDOR" Type="Int32" />
+          <Property Name="ID_LINEA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="150" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CONCEPTO_CHEQUE" Type="String" MaxLength="500" FixedLength="true" Unicode="false" />
+          <Property Name="MONTO" Type="Double" Nullable="false" />
+          <Property Name="ANULADO_CHEQUE" Type="Boolean" />
+          <NavigationProperty Name="LINEA_DE_PLANILLA" Relationship="Self.FK_CHEQUE_RELATIONS_LINEA_DE" FromRole="CHEQUE" ToRole="LINEA_DE_PLANILLA" />
+          <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK_CHEQUE_RELATIONS_PROVEEDO" FromRole="CHEQUE" ToRole="PROVEEDOR" />
+          <NavigationProperty Name="TRANSACCIONES" Relationship="Self.FK_TRANSACC_RELATIONS_CHEQUE" FromRole="CHEQUE" ToRole="TRANSACCIONES" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DUI_CLIENTE" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="150" FixedLength="true" Unicode="false" />
+          <Property Name="TELEFO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NIT" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="NUMERO_REGISTRO" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="GIRO" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="150" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="VENTA" Relationship="Self.FK_CLIENTE_RELATIONS_REMESAS" FromRole="CLIENTE" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="COMPRA">
+          <Key>
+            <PropertyRef Name="CORRELATIVO" />
+          </Key>
+          <Property Name="CORRELATIVO" Type="Int32" Nullable="false" />
+          <Property Name="ID_COSMATERIAL" Type="Int32" />
+          <Property Name="ID_COSTO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="COD_PROVEEDOR" Type="Int32" />
+          <Property Name="TIPO_DOCU_COMPRA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_PAGO_COMPRA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FECHA_EMISION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CONCEPTO_COMPRA" Type="String" MaxLength="500" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_DE_PAGO" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SUMA" Type="Double" Nullable="false" />
+          <Property Name="IVA" Type="Double" Nullable="false" />
+          <Property Name="TOTAL_COMPRA" Type="Double" Nullable="false" />
+          <Property Name="COMPRA_EXENTAS" Type="Double" />
+          <Property Name="RETENCION_RENTA" Type="Double" />
+          <Property Name="BONIFICACIONES" Type="Double" />
+          <Property Name="RETENCION_DE_IVA" Type="Double" />
+          <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK_COMPRA_REFERENCE_PROVEEDO" FromRole="COMPRA" ToRole="PROVEEDOR" />
+          <NavigationProperty Name="COSTO_INDIRECTO" Relationship="Self.FK_COMPRA_RELATIONS_COSTO_IN" FromRole="COMPRA" ToRole="COSTO_INDIRECTO" />
+          <NavigationProperty Name="COTOS_DE_MATERIAL" Relationship="Self.FK_COMPRA_RELATIONS_COTOS_DE" FromRole="COMPRA" ToRole="COTOS_DE_MATERIAL" />
+          <NavigationProperty Name="INVENTARIO_MATERIAL" Relationship="Self.FK_INVENTAR_RELATIONS_COMPRA" FromRole="COMPRA" ToRole="INVENTARIO_MATERIAL" />
+          <NavigationProperty Name="TRANSACCIONES" Relationship="Self.TRANSACIONES_COMPRA" FromRole="COMPRA" ToRole="TRANSACCIONES" />
+        </EntityType>
+        <EntityType Name="COSTO_INDIRECTO">
+          <Key>
+            <PropertyRef Name="ID_COSTO" />
+          </Key>
+          <Property Name="ID_COSTO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_PLANILLA" Type="Int32" />
+          <Property Name="COSTO_DE_MANO" Type="Double" />
+          <Property Name="OTROS_COSTOS" Type="Double" />
+          <NavigationProperty Name="COMPRA" Relationship="Self.FK_COMPRA_RELATIONS_COSTO_IN" FromRole="COSTO_INDIRECTO" ToRole="COMPRA" />
+          <NavigationProperty Name="PLANILLA" Relationship="Self.FK_COSTO_IN_RELATIONS_PLANILLA" FromRole="COSTO_INDIRECTO" ToRole="PLANILLA" />
+          <NavigationProperty Name="PRODUCTO_TERMINADO" Relationship="Self.FK_PRODUCTO_RELATIONS_COSTO_IN" FromRole="COSTO_INDIRECTO" ToRole="PRODUCTO_TERMINADO" />
+        </EntityType>
+        <EntityType Name="COTOS_DE_MATERIAL">
+          <Key>
+            <PropertyRef Name="ID_COSMATERIAL" />
+          </Key>
+          <Property Name="ID_COSMATERIAL" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_DE_INGRESO" Type="DateTime" Precision="3" />
+          <Property Name="COSTO_DE_COMPRA" Type="Double" Nullable="false" />
+          <Property Name="COSTO_UNITARIO" Type="Double" Nullable="false" />
+          <NavigationProperty Name="COMPRA" Relationship="Self.FK_COMPRA_RELATIONS_COTOS_DE" FromRole="COTOS_DE_MATERIAL" ToRole="COMPRA" />
+          <NavigationProperty Name="PRODUCTO_TERMINADO" Relationship="Self.FK_PRODUCTO_RELATIONS_COTOS_DE" FromRole="COTOS_DE_MATERIAL" ToRole="PRODUCTO_TERMINADO" />
+        </EntityType>
+        <EntityType Name="CUENTA">
+          <Key>
+            <PropertyRef Name="COD_CUENTA" />
+          </Key>
+          <Property Name="COD_CUENTA" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NOM_CUENTA" Type="String" MaxLength="200" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TRANSACCIONES" Relationship="Self.FK_TRANSACC_RELATIONS_CUENTA" FromRole="CUENTA" ToRole="TRANSACCIONES" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="DUI" />
+          </Key>
+          <Property Name="DUI" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="150" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CARGO" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CONTARTO" Type="DateTime" Precision="3" />
+          <Property Name="ATTRIBUTE_37" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="PLANILLA" Relationship="Self.FK_PLANILLA_RELATIONS_EMPLEADO" FromRole="EMPLEADO" ToRole="PLANILLA" />
+        </EntityType>
+        <EntityType Name="HOJA_DE_TRABAJO">
+          <Key>
+            <PropertyRef Name="ID_HOJA" />
+          </Key>
+          <Property Name="ID_HOJA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SALARIO_HOR_NOMAL" Type="Double" Nullable="false" />
+          <Property Name="SALRIOHORASEXTRAS" Type="Double" />
+          <Property Name="HORASTRABAJADAS" Type="Int32" />
+          <Property Name="HORASEXTRAS" Type="Double" />
+          <NavigationProperty Name="PLANILLA" Relationship="Self.FK_PLANILLA_RELATIONS_HOJA_DE_" FromRole="HOJA_DE_TRABAJO" ToRole="PLANILLA" />
+        </EntityType>
+        <EntityType Name="INVENTARIO_MATERIAL">
+          <Key>
+            <PropertyRef Name="COD_MATERIAL" />
+          </Key>
+          <Property Name="COD_MATERIAL" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CORRELATIVO" Type="Int32" />
+          <Property Name="NOM_MATERIAL" Type="String" MaxLength="200" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UNIDADES" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EXISTENCIA_" Type="Int32" />
+          <NavigationProperty Name="COMPRA" Relationship="Self.FK_INVENTAR_RELATIONS_COMPRA" FromRole="INVENTARIO_MATERIAL" ToRole="COMPRA" />
+          <NavigationProperty Name="PRODUCTO_EN_PROCESO" Relationship="Self.FABRICA" FromRole="INVENTARIO_MATERIAL" ToRole="PRODUCTO_EN_PROCESO" />
+        </EntityType>
+        <EntityType Name="KARDEX">
+          <Key>
+            <PropertyRef Name="NUMKARDEX" />
+          </Key>
+          <Property Name="NUMKARDEX" Type="Int32" Nullable="false" />
+          <Property Name="COSTOUNITARIO" Type="Double" />
+          <Property Name="FECHA_INGRESO" Type="DateTime" Precision="3" />
+          <Property Name="FECHA_DE_SALIDA" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="VENTA" Relationship="Self.FK_KARDEX_RELATIONS_VENTA" FromRole="KARDEX" ToRole="VENTA" />
+          <NavigationProperty Name="PRODUCTO_TERMINADO" Relationship="Self.FK_PRODUCTO_RELATIONS_KARDEX" FromRole="KARDEX" ToRole="PRODUCTO_TERMINADO" />
+        </EntityType>
+        <EntityType Name="LINEA_DE_PLANILLA">
+          <Key>
+            <PropertyRef Name="ID_LINEA" />
+          </Key>
+          <Property Name="ID_LINEA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHEQUE" Relationship="Self.FK_CHEQUE_RELATIONS_LINEA_DE" FromRole="LINEA_DE_PLANILLA" ToRole="CHEQUE" />
+          <NavigationProperty Name="PATRONO" Relationship="Self.FK_PATRONO_RELATIONS_LINEA_DE" FromRole="LINEA_DE_PLANILLA" ToRole="PATRONO" />
+          <NavigationProperty Name="PLANILLA" Relationship="Self.FK_PLANILLA_RELATIONS_LINEA_DE" FromRole="LINEA_DE_PLANILLA" ToRole="PLANILLA" />
+        </EntityType>
+        <EntityType Name="PATRONO">
+          <Key>
+            <PropertyRef Name="IDPATRONO" />
+          </Key>
+          <Property Name="IDPATRONO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_LINEA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ISSS" Type="Double" Nullable="false" />
+          <Property Name="AFP" Type="Double" Nullable="false" />
+          <NavigationProperty Name="LINEA_DE_PLANILLA" Relationship="Self.FK_PATRONO_RELATIONS_LINEA_DE" FromRole="PATRONO" ToRole="LINEA_DE_PLANILLA" />
+        </EntityType>
+        <EntityType Name="PERIODO">
+          <Key>
+            <PropertyRef Name="NUMPERIODO" />
+          </Key>
+          <Property Name="NUMPERIODO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DEBE_" Type="DateTime" Precision="3" />
+          <Property Name="FIN_PERIODO" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TRANSACCIONES" Relationship="Self.FK_TRANSACC_RELATIONS_PERIODO" FromRole="PERIODO" ToRole="TRANSACCIONES" />
+        </EntityType>
+        <EntityType Name="PLANILLA">
+          <Key>
+            <PropertyRef Name="ID_PLANILLA" />
+          </Key>
+          <Property Name="ID_PLANILLA" Type="Int32" Nullable="false" />
+          <Property Name="DUI" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ID_LINEA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ID_HOJA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FECHAPAGO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DE_ISS_TRABA" Type="Double" Nullable="false" />
+          <Property Name="DESCUENTOS" Type="Double" />
+          <Property Name="AFP_TRABAJADOR" Type="Double" />
+          <Property Name="TOTAL_PLANILLA" Type="Double" />
+          <NavigationProperty Name="COSTO_INDIRECTO" Relationship="Self.FK_COSTO_IN_RELATIONS_PLANILLA" FromRole="PLANILLA" ToRole="COSTO_INDIRECTO" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_PLANILLA_RELATIONS_EMPLEADO" FromRole="PLANILLA" ToRole="EMPLEADO" />
+          <NavigationProperty Name="HOJA_DE_TRABAJO" Relationship="Self.FK_PLANILLA_RELATIONS_HOJA_DE_" FromRole="PLANILLA" ToRole="HOJA_DE_TRABAJO" />
+          <NavigationProperty Name="LINEA_DE_PLANILLA" Relationship="Self.FK_PLANILLA_RELATIONS_LINEA_DE" FromRole="PLANILLA" ToRole="LINEA_DE_PLANILLA" />
+          <NavigationProperty Name="TRANSACCIONES" Relationship="Self.FK_TRANSACC_SE_REGIST_PLANILLA" FromRole="PLANILLA" ToRole="TRANSACCIONES" />
+        </EntityType>
+        <EntityType Name="PRODUCTO_EN_PROCESO">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_PROCE" />
+          </Key>
+          <Property Name="CORRELATIVO_PROCE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FECHA_DE_INICIO" Type="DateTime" Precision="3" />
+          <Property Name="FECHA_DE_DESPACHO" Type="DateTime" Precision="3" />
+          <Property Name="CANTI_PROCESO" Type="Int32" />
+          <NavigationProperty Name="CATALOGO_DE_PRODUCTO" Relationship="Self.FK_PRODUCTO_REFERENCE_CATALOGO" FromRole="PRODUCTO_EN_PROCESO" ToRole="CATALOGO_DE_PRODUCTO" />
+          <NavigationProperty Name="INVENTARIO_MATERIAL" Relationship="Self.FABRICA" FromRole="PRODUCTO_EN_PROCESO" ToRole="INVENTARIO_MATERIAL" />
+          <NavigationProperty Name="PRODUCTO_TERMINADO" Relationship="Self.TRANSFORMA" FromRole="PRODUCTO_EN_PROCESO" ToRole="PRODUCTO_TERMINADO" />
+        </EntityType>
+        <EntityType Name="PRODUCTO_TERMINADO">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_PRODUCTO" />
+          </Key>
+          <Property Name="CORRELATIVO_PRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="NUMKARDEX" Type="Int32" />
+          <Property Name="ID_COSMATERIAL" Type="Int32" />
+          <Property Name="ID_COSTO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="DESCRIPCION_DEL_PRODUCTO_TERMINADO" Type="String" MaxLength="1000" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EXISTENCIA_PRODUCTO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="COSTO_INDIRECTO" Relationship="Self.FK_PRODUCTO_RELATIONS_COSTO_IN" FromRole="PRODUCTO_TERMINADO" ToRole="COSTO_INDIRECTO" />
+          <NavigationProperty Name="COTOS_DE_MATERIAL" Relationship="Self.FK_PRODUCTO_RELATIONS_COTOS_DE" FromRole="PRODUCTO_TERMINADO" ToRole="COTOS_DE_MATERIAL" />
+          <NavigationProperty Name="KARDEX" Relationship="Self.FK_PRODUCTO_RELATIONS_KARDEX" FromRole="PRODUCTO_TERMINADO" ToRole="KARDEX" />
+          <NavigationProperty Name="PRODUCTO_EN_PROCESO" Relationship="Self.TRANSFORMA" FromRole="PRODUCTO_TERMINADO" ToRole="PRODUCTO_EN_PROCESO" />
+        </EntityType>
+        <EntityType Name="PROVEEDOR">
+          <Key>
+            <PropertyRef Name="COD_PROVEEDOR" />
+          </Key>
+          <Property Name="COD_PROVEEDOR" Type="Int32" Nullable="false" />
+          <Property Name="NOM_PROVEEDOR" Type="String" MaxLength="256" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="DIRECCION_PROVEEDOR" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="NIT_PROVEEDOR" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="GIRO_DE_EMPRESA" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="NUM_IVA_" Type="Int32" />
+          <NavigationProperty Name="CHEQUE" Relationship="Self.FK_CHEQUE_RELATIONS_PROVEEDO" FromRole="PROVEEDOR" ToRole="CHEQUE" />
+          <NavigationProperty Name="COMPRA" Relationship="Self.FK_COMPRA_REFERENCE_PROVEEDO" FromRole="PROVEEDOR" ToRole="COMPRA" />
+        </EntityType>
+        <EntityType Name="REMESAS">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_CHEQUE_REMESA" />
+          </Key>
+          <Property Name="CORRELATIVO_CHEQUE_REMESA" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CORRELATIVO_DOC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="A_NOMBRE" Type="String" MaxLength="150" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CONCEPTO_REMESA" Type="String" MaxLength="500" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MONTO_REMESA" Type="Double" Nullable="false" />
+          <Property Name="ANULADO_REMESA" Type="Boolean" />
+          <NavigationProperty Name="VENTA" Relationship="Self.FK_REMESAS_RELATIONS_VENTA" FromRole="REMESAS" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="TRANSACCIONES">
+          <Key>
+            <PropertyRef Name="NUM_TRANSACCION" />
+          </Key>
+          <Property Name="NUM_TRANSACCION" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NUMPERIODO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="COD_CUENTA" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="CORRELATIVO_CHEQUE" Type="Int32" />
+          <Property Name="ID_PLANILLA" Type="Int32" />
+          <Property Name="CONCEPTO" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CUENTA_CARGADA" Type="String" MaxLength="200" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CUENTA_ABONAR" Type="String" MaxLength="200" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MONTO_ABONADO" Type="Double" Nullable="false" />
+          <Property Name="MONTO_CARGADO" Type="Double" Nullable="false" />
+          <NavigationProperty Name="CHEQUE" Relationship="Self.FK_TRANSACC_RELATIONS_CHEQUE" FromRole="TRANSACCIONES" ToRole="CHEQUE" />
+          <NavigationProperty Name="CUENTA" Relationship="Self.FK_TRANSACC_RELATIONS_CUENTA" FromRole="TRANSACCIONES" ToRole="CUENTA" />
+          <NavigationProperty Name="PERIODO" Relationship="Self.FK_TRANSACC_RELATIONS_PERIODO" FromRole="TRANSACCIONES" ToRole="PERIODO" />
+          <NavigationProperty Name="PLANILLA" Relationship="Self.FK_TRANSACC_SE_REGIST_PLANILLA" FromRole="TRANSACCIONES" ToRole="PLANILLA" />
+          <NavigationProperty Name="VENTA" Relationship="Self.TRANSACION_VENTA" FromRole="TRANSACCIONES" ToRole="VENTA" />
+          <NavigationProperty Name="COMPRA" Relationship="Self.TRANSACIONES_COMPRA" FromRole="TRANSACCIONES" ToRole="COMPRA" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="CORRELATIVO_DOC" />
+          </Key>
+          <Property Name="CORRELATIVO_DOC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ID_CLIENTE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NUMKARDEX" Type="Int32" />
+          <Property Name="TIPO_DOCU_VENTA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_PAGO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="CONCEPTO_DE_VENTA" Type="String" MaxLength="400" FixedLength="true" Unicode="false" />
+          <Property Name="SUBTOTAL" Type="Double" Nullable="false" />
+          <Property Name="DESCUENTO" Type="Double" />
+          <Property Name="GRAVADAS" Type="Double" />
+          <Property Name="IVA" Type="Double" />
+          <Property Name="IVA_PERSIVIDO" Type="Double" />
+          <Property Name="IVA_RETENIDO" Type="Double" />
+          <Property Name="VENTAS_EXENTAS" Type="Double" />
+          <Property Name="TOTAL" Type="Double" />
+          <NavigationProperty Name="CATALOGO_DE_PRODUCTO" Relationship="Self.FK_VENTA_RELATIONS_CATALOGO" FromRole="VENTA" ToRole="CATALOGO_DE_PRODUCTO" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_RELATIONS_REMESAS" FromRole="VENTA" ToRole="CLIENTE" />
+          <NavigationProperty Name="KARDEX" Relationship="Self.FK_KARDEX_RELATIONS_VENTA" FromRole="VENTA" ToRole="KARDEX" />
+          <NavigationProperty Name="REMESAS" Relationship="Self.FK_REMESAS_RELATIONS_VENTA" FromRole="VENTA" ToRole="REMESAS" />
+          <NavigationProperty Name="TRANSACCIONES" Relationship="Self.TRANSACION_VENTA" FromRole="VENTA" ToRole="TRANSACCIONES" />
+        </EntityType>
+        <Association Name="FK_PRODUCTO_REFERENCE_CATALOGO">
+          <End Role="CATALOGO_DE_PRODUCTO" Type="Self.CATALOGO_DE_PRODUCTO" Multiplicity="0..1" />
+          <End Role="PRODUCTO_EN_PROCESO" Type="Self.PRODUCTO_EN_PROCESO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATALOGO_DE_PRODUCTO">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Principal>
+            <Dependent Role="PRODUCTO_EN_PROCESO">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_RELATIONS_CATALOGO">
+          <End Role="CATALOGO_DE_PRODUCTO" Type="Self.CATALOGO_DE_PRODUCTO" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATALOGO_DE_PRODUCTO">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="ID_PRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHEQUE_RELATIONS_LINEA_DE">
+          <End Role="LINEA_DE_PLANILLA" Type="Self.LINEA_DE_PLANILLA" Multiplicity="0..1" />
+          <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINEA_DE_PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Principal>
+            <Dependent Role="CHEQUE">
+              <PropertyRef Name="ID_LINEA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHEQUE_RELATIONS_PROVEEDO">
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+          <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDOR">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="CHEQUE">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_RELATIONS_CHEQUE">
+          <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHEQUE">
+              <PropertyRef Name="CORRELATIVO_CHEQUE" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="CORRELATIVO_CHEQUE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_RELATIONS_REMESAS">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPRA_REFERENCE_PROVEEDO">
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDOR">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="COD_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPRA_RELATIONS_COSTO_IN">
+          <End Role="COSTO_INDIRECTO" Type="Self.COSTO_INDIRECTO" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COSTO_INDIRECTO">
+              <PropertyRef Name="ID_COSTO" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="ID_COSTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPRA_RELATIONS_COTOS_DE">
+          <End Role="COTOS_DE_MATERIAL" Type="Self.COTOS_DE_MATERIAL" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COTOS_DE_MATERIAL">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INVENTAR_RELATIONS_COMPRA">
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="0..1" />
+          <End Role="INVENTARIO_MATERIAL" Type="Self.INVENTARIO_MATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPRA">
+              <PropertyRef Name="CORRELATIVO" />
+            </Principal>
+            <Dependent Role="INVENTARIO_MATERIAL">
+              <PropertyRef Name="CORRELATIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COSTO_IN_RELATIONS_PLANILLA">
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="0..1" />
+          <End Role="COSTO_INDIRECTO" Type="Self.COSTO_INDIRECTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLANILLA">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Principal>
+            <Dependent Role="COSTO_INDIRECTO">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_RELATIONS_COSTO_IN">
+          <End Role="COSTO_INDIRECTO" Type="Self.COSTO_INDIRECTO" Multiplicity="0..1" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COSTO_INDIRECTO">
+              <PropertyRef Name="ID_COSTO" />
+            </Principal>
+            <Dependent Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="ID_COSTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_RELATIONS_COTOS_DE">
+          <End Role="COTOS_DE_MATERIAL" Type="Self.COTOS_DE_MATERIAL" Multiplicity="0..1" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COTOS_DE_MATERIAL">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Principal>
+            <Dependent Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="ID_COSMATERIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_RELATIONS_CUENTA">
+          <End Role="CUENTA" Type="Self.CUENTA" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUENTA">
+              <PropertyRef Name="COD_CUENTA" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="COD_CUENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANILLA_RELATIONS_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="DUI" />
+            </Principal>
+            <Dependent Role="PLANILLA">
+              <PropertyRef Name="DUI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANILLA_RELATIONS_HOJA_DE_">
+          <End Role="HOJA_DE_TRABAJO" Type="Self.HOJA_DE_TRABAJO" Multiplicity="0..1" />
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOJA_DE_TRABAJO">
+              <PropertyRef Name="ID_HOJA" />
+            </Principal>
+            <Dependent Role="PLANILLA">
+              <PropertyRef Name="ID_HOJA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KARDEX_RELATIONS_VENTA">
+          <End Role="KARDEX" Type="Self.KARDEX" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KARDEX">
+              <PropertyRef Name="NUMKARDEX" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="NUMKARDEX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_RELATIONS_KARDEX">
+          <End Role="KARDEX" Type="Self.KARDEX" Multiplicity="0..1" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KARDEX">
+              <PropertyRef Name="NUMKARDEX" />
+            </Principal>
+            <Dependent Role="PRODUCTO_TERMINADO">
+              <PropertyRef Name="NUMKARDEX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PATRONO_RELATIONS_LINEA_DE">
+          <End Role="LINEA_DE_PLANILLA" Type="Self.LINEA_DE_PLANILLA" Multiplicity="0..1" />
+          <End Role="PATRONO" Type="Self.PATRONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINEA_DE_PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Principal>
+            <Dependent Role="PATRONO">
+              <PropertyRef Name="ID_LINEA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLANILLA_RELATIONS_LINEA_DE">
+          <End Role="LINEA_DE_PLANILLA" Type="Self.LINEA_DE_PLANILLA" Multiplicity="0..1" />
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINEA_DE_PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Principal>
+            <Dependent Role="PLANILLA">
+              <PropertyRef Name="ID_LINEA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_RELATIONS_PERIODO">
+          <End Role="PERIODO" Type="Self.PERIODO" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERIODO">
+              <PropertyRef Name="NUMPERIODO" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="NUMPERIODO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRANSACC_SE_REGIST_PLANILLA">
+          <End Role="PLANILLA" Type="Self.PLANILLA" Multiplicity="0..1" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLANILLA">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Principal>
+            <Dependent Role="TRANSACCIONES">
+              <PropertyRef Name="ID_PLANILLA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REMESAS_RELATIONS_VENTA">
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="0..1" />
+          <End Role="REMESAS" Type="Self.REMESAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="CORRELATIVO_DOC" />
+            </Principal>
+            <Dependent Role="REMESAS">
+              <PropertyRef Name="CORRELATIVO_DOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FABRICA">
+          <End Role="INVENTARIO_MATERIAL" Type="Self.INVENTARIO_MATERIAL" Multiplicity="*" />
+          <End Role="PRODUCTO_EN_PROCESO" Type="Self.PRODUCTO_EN_PROCESO" Multiplicity="*" />
+        </Association>
+        <Association Name="TRANSACION_VENTA">
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+          <End Role="VENTA" Type="Self.VENTA" Multiplicity="*" />
+        </Association>
+        <Association Name="TRANSACIONES_COMPRA">
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <End Role="TRANSACCIONES" Type="Self.TRANSACCIONES" Multiplicity="*" />
+        </Association>
+        <Association Name="TRANSFORMA">
+          <End Role="PRODUCTO_EN_PROCESO" Type="Self.PRODUCTO_EN_PROCESO" Multiplicity="*" />
+          <End Role="PRODUCTO_TERMINADO" Type="Self.PRODUCTO_TERMINADO" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DB_A50304_jorgemarro91Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CATALOGO_DE_PRODUCTO" EntityType="Self.CATALOGO_DE_PRODUCTO" />
+          <EntitySet Name="CHEQUE" EntityType="Self.CHEQUE" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="COMPRA" EntityType="Self.COMPRA" />
+          <EntitySet Name="COSTO_INDIRECTO" EntityType="Self.COSTO_INDIRECTO" />
+          <EntitySet Name="COTOS_DE_MATERIAL" EntityType="Self.COTOS_DE_MATERIAL" />
+          <EntitySet Name="CUENTA" EntityType="Self.CUENTA" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+          <EntitySet Name="HOJA_DE_TRABAJO" EntityType="Self.HOJA_DE_TRABAJO" />
+          <EntitySet Name="INVENTARIO_MATERIAL" EntityType="Self.INVENTARIO_MATERIAL" />
+          <EntitySet Name="KARDEX" EntityType="Self.KARDEX" />
+          <EntitySet Name="LINEA_DE_PLANILLA" EntityType="Self.LINEA_DE_PLANILLA" />
+          <EntitySet Name="PATRONO" EntityType="Self.PATRONO" />
+          <EntitySet Name="PERIODO" EntityType="Self.PERIODO" />
+          <EntitySet Name="PLANILLA" EntityType="Self.PLANILLA" />
+          <EntitySet Name="PRODUCTO_EN_PROCESO" EntityType="Self.PRODUCTO_EN_PROCESO" />
+          <EntitySet Name="PRODUCTO_TERMINADO" EntityType="Self.PRODUCTO_TERMINADO" />
+          <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
+          <EntitySet Name="REMESAS" EntityType="Self.REMESAS" />
+          <EntitySet Name="TRANSACCIONES" EntityType="Self.TRANSACCIONES" />
+          <EntitySet Name="VENTA" EntityType="Self.VENTA" />
+          <AssociationSet Name="FK_PRODUCTO_REFERENCE_CATALOGO" Association="Self.FK_PRODUCTO_REFERENCE_CATALOGO">
+            <End Role="CATALOGO_DE_PRODUCTO" EntitySet="CATALOGO_DE_PRODUCTO" />
+            <End Role="PRODUCTO_EN_PROCESO" EntitySet="PRODUCTO_EN_PROCESO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_RELATIONS_CATALOGO" Association="Self.FK_VENTA_RELATIONS_CATALOGO">
+            <End Role="CATALOGO_DE_PRODUCTO" EntitySet="CATALOGO_DE_PRODUCTO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHEQUE_RELATIONS_LINEA_DE" Association="Self.FK_CHEQUE_RELATIONS_LINEA_DE">
+            <End Role="LINEA_DE_PLANILLA" EntitySet="LINEA_DE_PLANILLA" />
+            <End Role="CHEQUE" EntitySet="CHEQUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHEQUE_RELATIONS_PROVEEDO" Association="Self.FK_CHEQUE_RELATIONS_PROVEEDO">
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="CHEQUE" EntitySet="CHEQUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_RELATIONS_CHEQUE" Association="Self.FK_TRANSACC_RELATIONS_CHEQUE">
+            <End Role="CHEQUE" EntitySet="CHEQUE" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_RELATIONS_REMESAS" Association="Self.FK_CLIENTE_RELATIONS_REMESAS">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPRA_REFERENCE_PROVEEDO" Association="Self.FK_COMPRA_REFERENCE_PROVEEDO">
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPRA_RELATIONS_COSTO_IN" Association="Self.FK_COMPRA_RELATIONS_COSTO_IN">
+            <End Role="COSTO_INDIRECTO" EntitySet="COSTO_INDIRECTO" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPRA_RELATIONS_COTOS_DE" Association="Self.FK_COMPRA_RELATIONS_COTOS_DE">
+            <End Role="COTOS_DE_MATERIAL" EntitySet="COTOS_DE_MATERIAL" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INVENTAR_RELATIONS_COMPRA" Association="Self.FK_INVENTAR_RELATIONS_COMPRA">
+            <End Role="COMPRA" EntitySet="COMPRA" />
+            <End Role="INVENTARIO_MATERIAL" EntitySet="INVENTARIO_MATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COSTO_IN_RELATIONS_PLANILLA" Association="Self.FK_COSTO_IN_RELATIONS_PLANILLA">
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+            <End Role="COSTO_INDIRECTO" EntitySet="COSTO_INDIRECTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_RELATIONS_COSTO_IN" Association="Self.FK_PRODUCTO_RELATIONS_COSTO_IN">
+            <End Role="COSTO_INDIRECTO" EntitySet="COSTO_INDIRECTO" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_RELATIONS_COTOS_DE" Association="Self.FK_PRODUCTO_RELATIONS_COTOS_DE">
+            <End Role="COTOS_DE_MATERIAL" EntitySet="COTOS_DE_MATERIAL" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_RELATIONS_CUENTA" Association="Self.FK_TRANSACC_RELATIONS_CUENTA">
+            <End Role="CUENTA" EntitySet="CUENTA" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANILLA_RELATIONS_EMPLEADO" Association="Self.FK_PLANILLA_RELATIONS_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANILLA_RELATIONS_HOJA_DE_" Association="Self.FK_PLANILLA_RELATIONS_HOJA_DE_">
+            <End Role="HOJA_DE_TRABAJO" EntitySet="HOJA_DE_TRABAJO" />
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KARDEX_RELATIONS_VENTA" Association="Self.FK_KARDEX_RELATIONS_VENTA">
+            <End Role="KARDEX" EntitySet="KARDEX" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_RELATIONS_KARDEX" Association="Self.FK_PRODUCTO_RELATIONS_KARDEX">
+            <End Role="KARDEX" EntitySet="KARDEX" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PATRONO_RELATIONS_LINEA_DE" Association="Self.FK_PATRONO_RELATIONS_LINEA_DE">
+            <End Role="LINEA_DE_PLANILLA" EntitySet="LINEA_DE_PLANILLA" />
+            <End Role="PATRONO" EntitySet="PATRONO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLANILLA_RELATIONS_LINEA_DE" Association="Self.FK_PLANILLA_RELATIONS_LINEA_DE">
+            <End Role="LINEA_DE_PLANILLA" EntitySet="LINEA_DE_PLANILLA" />
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_RELATIONS_PERIODO" Association="Self.FK_TRANSACC_RELATIONS_PERIODO">
+            <End Role="PERIODO" EntitySet="PERIODO" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRANSACC_SE_REGIST_PLANILLA" Association="Self.FK_TRANSACC_SE_REGIST_PLANILLA">
+            <End Role="PLANILLA" EntitySet="PLANILLA" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REMESAS_RELATIONS_VENTA" Association="Self.FK_REMESAS_RELATIONS_VENTA">
+            <End Role="VENTA" EntitySet="VENTA" />
+            <End Role="REMESAS" EntitySet="REMESAS" />
+          </AssociationSet>
+          <AssociationSet Name="FABRICA" Association="Self.FABRICA">
+            <End Role="INVENTARIO_MATERIAL" EntitySet="INVENTARIO_MATERIAL" />
+            <End Role="PRODUCTO_EN_PROCESO" EntitySet="PRODUCTO_EN_PROCESO" />
+          </AssociationSet>
+          <AssociationSet Name="TRANSACION_VENTA" Association="Self.TRANSACION_VENTA">
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="TRANSACIONES_COMPRA" Association="Self.TRANSACIONES_COMPRA">
+            <End Role="COMPRA" EntitySet="COMPRA" />
+            <End Role="TRANSACCIONES" EntitySet="TRANSACCIONES" />
+          </AssociationSet>
+          <AssociationSet Name="TRANSFORMA" Association="Self.TRANSFORMA">
+            <End Role="PRODUCTO_EN_PROCESO" EntitySet="PRODUCTO_EN_PROCESO" />
+            <End Role="PRODUCTO_TERMINADO" EntitySet="PRODUCTO_TERMINADO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A50304_jorgemarro91ModelStoreContainer" CdmEntityContainer="DB_A50304_jorgemarro91Entities">
+          <EntitySetMapping Name="CATALOGO_DE_PRODUCTO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CATALOGO_DE_PRODUCTO">
+              <MappingFragment StoreEntitySet="CATALOGO_DE_PRODUCTO">
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+                <ScalarProperty Name="COSTO_" ColumnName="COSTO_" />
+                <ScalarProperty Name="DESCRIPCION_PRODUCTO" ColumnName="DESCRIPCION_PRODUCTO" />
+                <ScalarProperty Name="PORCENTAJE_GANACIA" ColumnName="PORCENTAJE_GANACIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHEQUE">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CHEQUE">
+              <MappingFragment StoreEntitySet="CHEQUE">
+                <ScalarProperty Name="CORRELATIVO_CHEQUE" ColumnName="CORRELATIVO_CHEQUE" />
+                <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+                <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CONCEPTO_CHEQUE" ColumnName="CONCEPTO_CHEQUE" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="ANULADO_CHEQUE" ColumnName="ANULADO_CHEQUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="DUI_CLIENTE" ColumnName="DUI_CLIENTE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TELEFO" ColumnName="TELEFO" />
+                <ScalarProperty Name="NIT" ColumnName="NIT" />
+                <ScalarProperty Name="NUMERO_REGISTRO" ColumnName="NUMERO_REGISTRO" />
+                <ScalarProperty Name="GIRO" ColumnName="GIRO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPRA">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.COMPRA">
+              <MappingFragment StoreEntitySet="COMPRA">
+                <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+                <ScalarProperty Name="ID_COSMATERIAL" ColumnName="ID_COSMATERIAL" />
+                <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
+                <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+                <ScalarProperty Name="TIPO_DOCU_COMPRA" ColumnName="TIPO_DOCU_COMPRA" />
+                <ScalarProperty Name="TIPO_PAGO_COMPRA" ColumnName="TIPO_PAGO_COMPRA" />
+                <ScalarProperty Name="FECHA_EMISION" ColumnName="FECHA_EMISION" />
+                <ScalarProperty Name="CONCEPTO_COMPRA" ColumnName="CONCEPTO_COMPRA" />
+                <ScalarProperty Name="TIPO_DE_PAGO" ColumnName="TIPO_DE_PAGO" />
+                <ScalarProperty Name="SUMA" ColumnName="SUMA" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="TOTAL_COMPRA" ColumnName="TOTAL_COMPRA" />
+                <ScalarProperty Name="COMPRA_EXENTAS" ColumnName="COMPRA_EXENTAS" />
+                <ScalarProperty Name="RETENCION_RENTA" ColumnName="RETENCION_RENTA" />
+                <ScalarProperty Name="BONIFICACIONES" ColumnName="BONIFICACIONES" />
+                <ScalarProperty Name="RETENCION_DE_IVA" ColumnName="RETENCION_DE_IVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COSTO_INDIRECTO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.COSTO_INDIRECTO">
+              <MappingFragment StoreEntitySet="COSTO_INDIRECTO">
+                <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
+                <ScalarProperty Name="ID_PLANILLA" ColumnName="ID_PLANILLA" />
+                <ScalarProperty Name="COSTO_DE_MANO" ColumnName="COSTO_DE_MANO" />
+                <ScalarProperty Name="OTROS_COSTOS" ColumnName="OTROS_COSTOS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COTOS_DE_MATERIAL">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.COTOS_DE_MATERIAL">
+              <MappingFragment StoreEntitySet="COTOS_DE_MATERIAL">
+                <ScalarProperty Name="ID_COSMATERIAL" ColumnName="ID_COSMATERIAL" />
+                <ScalarProperty Name="FECHA_DE_INGRESO" ColumnName="FECHA_DE_INGRESO" />
+                <ScalarProperty Name="COSTO_DE_COMPRA" ColumnName="COSTO_DE_COMPRA" />
+                <ScalarProperty Name="COSTO_UNITARIO" ColumnName="COSTO_UNITARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUENTA">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.CUENTA">
+              <MappingFragment StoreEntitySet="CUENTA">
+                <ScalarProperty Name="COD_CUENTA" ColumnName="COD_CUENTA" />
+                <ScalarProperty Name="NOM_CUENTA" ColumnName="NOM_CUENTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="DUI" ColumnName="DUI" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+                <ScalarProperty Name="FECHA_CONTARTO" ColumnName="FECHA_CONTARTO" />
+                <ScalarProperty Name="ATTRIBUTE_37" ColumnName="ATTRIBUTE_37" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOJA_DE_TRABAJO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.HOJA_DE_TRABAJO">
+              <MappingFragment StoreEntitySet="HOJA_DE_TRABAJO">
+                <ScalarProperty Name="ID_HOJA" ColumnName="ID_HOJA" />
+                <ScalarProperty Name="SALARIO_HOR_NOMAL" ColumnName="SALARIO_HOR_NOMAL" />
+                <ScalarProperty Name="SALRIOHORASEXTRAS" ColumnName="SALRIOHORASEXTRAS" />
+                <ScalarProperty Name="HORASTRABAJADAS" ColumnName="HORASTRABAJADAS" />
+                <ScalarProperty Name="HORASEXTRAS" ColumnName="HORASEXTRAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INVENTARIO_MATERIAL">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.INVENTARIO_MATERIAL">
+              <MappingFragment StoreEntitySet="INVENTARIO_MATERIAL">
+                <ScalarProperty Name="COD_MATERIAL" ColumnName="COD_MATERIAL" />
+                <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+                <ScalarProperty Name="NOM_MATERIAL" ColumnName="NOM_MATERIAL" />
+                <ScalarProperty Name="UNIDADES" ColumnName="UNIDADES" />
+                <ScalarProperty Name="EXISTENCIA_" ColumnName="EXISTENCIA_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KARDEX">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.KARDEX">
+              <MappingFragment StoreEntitySet="KARDEX">
+                <ScalarProperty Name="NUMKARDEX" ColumnName="NUMKARDEX" />
+                <ScalarProperty Name="COSTOUNITARIO" ColumnName="COSTOUNITARIO" />
+                <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+                <ScalarProperty Name="FECHA_DE_SALIDA" ColumnName="FECHA_DE_SALIDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LINEA_DE_PLANILLA">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.LINEA_DE_PLANILLA">
+              <MappingFragment StoreEntitySet="LINEA_DE_PLANILLA">
+                <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PATRONO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PATRONO">
+              <MappingFragment StoreEntitySet="PATRONO">
+                <ScalarProperty Name="IDPATRONO" ColumnName="IDPATRONO" />
+                <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+                <ScalarProperty Name="ISSS" ColumnName="ISSS" />
+                <ScalarProperty Name="AFP" ColumnName="AFP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERIODO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PERIODO">
+              <MappingFragment StoreEntitySet="PERIODO">
+                <ScalarProperty Name="NUMPERIODO" ColumnName="NUMPERIODO" />
+                <ScalarProperty Name="DEBE_" ColumnName="DEBE_" />
+                <ScalarProperty Name="FIN_PERIODO" ColumnName="FIN_PERIODO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLANILLA">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PLANILLA">
+              <MappingFragment StoreEntitySet="PLANILLA">
+                <ScalarProperty Name="ID_PLANILLA" ColumnName="ID_PLANILLA" />
+                <ScalarProperty Name="DUI" ColumnName="DUI" />
+                <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+                <ScalarProperty Name="ID_HOJA" ColumnName="ID_HOJA" />
+                <ScalarProperty Name="FECHAPAGO" ColumnName="FECHAPAGO" />
+                <ScalarProperty Name="DE_ISS_TRABA" ColumnName="DE_ISS_TRABA" />
+                <ScalarProperty Name="DESCUENTOS" ColumnName="DESCUENTOS" />
+                <ScalarProperty Name="AFP_TRABAJADOR" ColumnName="AFP_TRABAJADOR" />
+                <ScalarProperty Name="TOTAL_PLANILLA" ColumnName="TOTAL_PLANILLA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTO_EN_PROCESO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PRODUCTO_EN_PROCESO">
+              <MappingFragment StoreEntitySet="PRODUCTO_EN_PROCESO">
+                <ScalarProperty Name="CORRELATIVO_PROCE" ColumnName="CORRELATIVO_PROCE" />
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+                <ScalarProperty Name="FECHA_DE_INICIO" ColumnName="FECHA_DE_INICIO" />
+                <ScalarProperty Name="FECHA_DE_DESPACHO" ColumnName="FECHA_DE_DESPACHO" />
+                <ScalarProperty Name="CANTI_PROCESO" ColumnName="CANTI_PROCESO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTO_TERMINADO">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PRODUCTO_TERMINADO">
+              <MappingFragment StoreEntitySet="PRODUCTO_TERMINADO">
+                <ScalarProperty Name="CORRELATIVO_PRODUCTO" ColumnName="CORRELATIVO_PRODUCTO" />
+                <ScalarProperty Name="NUMKARDEX" ColumnName="NUMKARDEX" />
+                <ScalarProperty Name="ID_COSMATERIAL" ColumnName="ID_COSMATERIAL" />
+                <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
+                <ScalarProperty Name="DESCRIPCION_DEL_PRODUCTO_TERMINADO" ColumnName="DESCRIPCION_DEL_PRODUCTO_TERMINADO" />
+                <ScalarProperty Name="EXISTENCIA_PRODUCTO" ColumnName="EXISTENCIA_PRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROVEEDOR">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.PROVEEDOR">
+              <MappingFragment StoreEntitySet="PROVEEDOR">
+                <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+                <ScalarProperty Name="NOM_PROVEEDOR" ColumnName="NOM_PROVEEDOR" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION_PROVEEDOR" ColumnName="DIRECCION_PROVEEDOR" />
+                <ScalarProperty Name="NIT_PROVEEDOR" ColumnName="NIT_PROVEEDOR" />
+                <ScalarProperty Name="GIRO_DE_EMPRESA" ColumnName="GIRO_DE_EMPRESA" />
+                <ScalarProperty Name="NUM_IVA_" ColumnName="NUM_IVA_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REMESAS">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.REMESAS">
+              <MappingFragment StoreEntitySet="REMESAS">
+                <ScalarProperty Name="CORRELATIVO_CHEQUE_REMESA" ColumnName="CORRELATIVO_CHEQUE_REMESA" />
+                <ScalarProperty Name="CORRELATIVO_DOC" ColumnName="CORRELATIVO_DOC" />
+                <ScalarProperty Name="A_NOMBRE" ColumnName="A_NOMBRE" />
+                <ScalarProperty Name="CONCEPTO_REMESA" ColumnName="CONCEPTO_REMESA" />
+                <ScalarProperty Name="MONTO_REMESA" ColumnName="MONTO_REMESA" />
+                <ScalarProperty Name="ANULADO_REMESA" ColumnName="ANULADO_REMESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSACCIONES">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.TRANSACCIONES">
+              <MappingFragment StoreEntitySet="TRANSACCIONES">
+                <ScalarProperty Name="NUM_TRANSACCION" ColumnName="NUM_TRANSACCION" />
+                <ScalarProperty Name="NUMPERIODO" ColumnName="NUMPERIODO" />
+                <ScalarProperty Name="COD_CUENTA" ColumnName="COD_CUENTA" />
+                <ScalarProperty Name="CORRELATIVO_CHEQUE" ColumnName="CORRELATIVO_CHEQUE" />
+                <ScalarProperty Name="ID_PLANILLA" ColumnName="ID_PLANILLA" />
+                <ScalarProperty Name="CONCEPTO" ColumnName="CONCEPTO" />
+                <ScalarProperty Name="CUENTA_CARGADA" ColumnName="CUENTA_CARGADA" />
+                <ScalarProperty Name="CUENTA_ABONAR" ColumnName="CUENTA_ABONAR" />
+                <ScalarProperty Name="MONTO_ABONADO" ColumnName="MONTO_ABONADO" />
+                <ScalarProperty Name="MONTO_CARGADO" ColumnName="MONTO_CARGADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENTA">
+            <EntityTypeMapping TypeName="DB_A50304_jorgemarro91Model.VENTA">
+              <MappingFragment StoreEntitySet="VENTA">
+                <ScalarProperty Name="CORRELATIVO_DOC" ColumnName="CORRELATIVO_DOC" />
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="NUMKARDEX" ColumnName="NUMKARDEX" />
+                <ScalarProperty Name="TIPO_DOCU_VENTA" ColumnName="TIPO_DOCU_VENTA" />
+                <ScalarProperty Name="TIPO_PAGO" ColumnName="TIPO_PAGO" />
+                <ScalarProperty Name="CONCEPTO_DE_VENTA" ColumnName="CONCEPTO_DE_VENTA" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+                <ScalarProperty Name="GRAVADAS" ColumnName="GRAVADAS" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="IVA_PERSIVIDO" ColumnName="IVA_PERSIVIDO" />
+                <ScalarProperty Name="IVA_RETENIDO" ColumnName="IVA_RETENIDO" />
+                <ScalarProperty Name="VENTAS_EXENTAS" ColumnName="VENTAS_EXENTAS" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FABRICA" TypeName="DB_A50304_jorgemarro91Model.FABRICA" StoreEntitySet="FABRICA">
+            <EndProperty Name="INVENTARIO_MATERIAL">
+              <ScalarProperty Name="COD_MATERIAL" ColumnName="COD_MATERIAL" />
+            </EndProperty>
+            <EndProperty Name="PRODUCTO_EN_PROCESO">
+              <ScalarProperty Name="CORRELATIVO_PROCE" ColumnName="CORRELATIVO_PROCE" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TRANSACION_VENTA" TypeName="DB_A50304_jorgemarro91Model.TRANSACION_VENTA" StoreEntitySet="TRANSACION_VENTA">
+            <EndProperty Name="TRANSACCIONES">
+              <ScalarProperty Name="NUM_TRANSACCION" ColumnName="NUM_TRANSACCION" />
+            </EndProperty>
+            <EndProperty Name="VENTA">
+              <ScalarProperty Name="CORRELATIVO_DOC" ColumnName="CORRELATIVO_DOC" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TRANSACIONES_COMPRA" TypeName="DB_A50304_jorgemarro91Model.TRANSACIONES_COMPRA" StoreEntitySet="TRANSACIONES_COMPRA">
+            <EndProperty Name="COMPRA">
+              <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+            </EndProperty>
+            <EndProperty Name="TRANSACCIONES">
+              <ScalarProperty Name="NUM_TRANSACCION" ColumnName="NUM_TRANSACCION" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TRANSFORMA" TypeName="DB_A50304_jorgemarro91Model.TRANSFORMA" StoreEntitySet="TRANSFORMA">
+            <EndProperty Name="PRODUCTO_EN_PROCESO">
+              <ScalarProperty Name="CORRELATIVO_PROCE" ColumnName="CORRELATIVO_PROCE" />
+            </EndProperty>
+            <EndProperty Name="PRODUCTO_TERMINADO">
+              <ScalarProperty Name="CORRELATIVO_PRODUCTO" ColumnName="CORRELATIVO_PRODUCTO" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

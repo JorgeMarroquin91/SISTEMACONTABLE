@@ -1,0 +1,58 @@
+﻿@model SistemaContable.Models.PRODUCTO_TERMINADO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUCTO_TERMINADO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_DEL_PRODUCTO_TERMINADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION_DEL_PRODUCTO_TERMINADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXISTENCIA_PRODUCTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXISTENCIA_PRODUCTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_INDIRECTO.ID_COSTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_INDIRECTO.ID_COSTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COTOS_DE_MATERIAL.ID_COSMATERIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COTOS_DE_MATERIAL.ID_COSMATERIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KARDEX.NUMKARDEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KARDEX.NUMKARDEX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CORRELATIVO_PRODUCTO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

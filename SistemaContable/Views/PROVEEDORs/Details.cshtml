@@ -1,0 +1,66 @@
+﻿@model SistemaContable.Models.PROVEEDOR
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PROVEEDOR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_PROVEEDOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_PROVEEDOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFONO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRECCION_PROVEEDOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRECCION_PROVEEDOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIT_PROVEEDOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIT_PROVEEDOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIRO_DE_EMPRESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIRO_DE_EMPRESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUM_IVA_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUM_IVA_)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COD_PROVEEDOR }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

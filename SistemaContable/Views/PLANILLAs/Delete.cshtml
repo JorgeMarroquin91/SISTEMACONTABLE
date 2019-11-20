@@ -1,0 +1,88 @@
+﻿@model SistemaContable.Models.PLANILLA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PLANILLA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHAPAGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHAPAGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DE_ISS_TRABA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DE_ISS_TRABA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCUENTOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCUENTOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AFP_TRABAJADOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AFP_TRABAJADOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTAL_PLANILLA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTAL_PLANILLA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLEADO.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLEADO.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOJA_DE_TRABAJO.ID_HOJA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOJA_DE_TRABAJO.ID_HOJA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

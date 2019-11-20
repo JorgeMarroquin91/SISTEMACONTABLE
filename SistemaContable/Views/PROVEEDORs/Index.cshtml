@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SistemaContable.Models.PROVEEDOR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_PROVEEDOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRECCION_PROVEEDOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NIT_PROVEEDOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIRO_DE_EMPRESA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_IVA_)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_PROVEEDOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TELEFONO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIRECCION_PROVEEDOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NIT_PROVEEDOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIRO_DE_EMPRESA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_IVA_)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.COD_PROVEEDOR }) |
+            @Html.ActionLink("Details", "Details", new { id=item.COD_PROVEEDOR }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.COD_PROVEEDOR })
+        </td>
+    </tr>
+}
+
+</table>

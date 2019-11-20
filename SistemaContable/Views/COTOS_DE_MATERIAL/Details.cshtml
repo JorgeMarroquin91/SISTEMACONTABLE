@@ -1,0 +1,42 @@
+﻿@model SistemaContable.Models.COTOS_DE_MATERIAL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COTOS_DE_MATERIAL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_DE_INGRESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_DE_INGRESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_DE_COMPRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_DE_COMPRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_UNITARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_UNITARIO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_COSMATERIAL }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

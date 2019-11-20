@@ -1,0 +1,42 @@
+﻿@model SistemaContable.Models.CATALOGO_DE_PRODUCTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CATALOGO_DE_PRODUCTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTO_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTO_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_PRODUCTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION_PRODUCTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_GANACIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORCENTAJE_GANACIA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PRODUCTO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

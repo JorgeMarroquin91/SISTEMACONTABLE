@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SistemaContable.Models.PLANILLA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHAPAGO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DE_ISS_TRABA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCUENTOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AFP_TRABAJADOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL_PLANILLA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLEADO.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOJA_DE_TRABAJO.ID_HOJA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHAPAGO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DE_ISS_TRABA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCUENTOS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AFP_TRABAJADOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTAL_PLANILLA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLEADO.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOJA_DE_TRABAJO.ID_HOJA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LINEA_DE_PLANILLA.ID_LINEA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PLANILLA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PLANILLA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PLANILLA })
+        </td>
+    </tr>
+}
+
+</table>

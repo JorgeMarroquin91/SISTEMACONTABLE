@@ -1,0 +1,50 @@
+﻿@model SistemaContable.Models.INVENTARIO_MATERIAL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>INVENTARIO_MATERIAL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_MATERIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_MATERIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNIDADES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNIDADES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXISTENCIA_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXISTENCIA_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPRA.ID_COSTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPRA.ID_COSTO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COD_MATERIAL }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

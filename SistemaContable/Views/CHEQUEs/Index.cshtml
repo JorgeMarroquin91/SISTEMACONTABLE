@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SistemaContable.Models.CHEQUE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONCEPTO_CHEQUE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANULADO_CHEQUE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LINEA_DE_PLANILLA.ID_LINEA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROVEEDOR.NOM_PROVEEDOR)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONCEPTO_CHEQUE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANULADO_CHEQUE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LINEA_DE_PLANILLA.ID_LINEA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROVEEDOR.NOM_PROVEEDOR)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CORRELATIVO_CHEQUE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CORRELATIVO_CHEQUE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CORRELATIVO_CHEQUE })
+        </td>
+    </tr>
+}
+
+</table>

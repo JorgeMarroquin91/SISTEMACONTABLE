@@ -1,0 +1,58 @@
+﻿@model SistemaContable.Models.REMESAS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>REMESAS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.A_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.A_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONCEPTO_REMESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONCEPTO_REMESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTO_REMESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTO_REMESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANULADO_REMESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANULADO_REMESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VENTA.ID_PRODUCTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VENTA.ID_PRODUCTO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CORRELATIVO_CHEQUE_REMESA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

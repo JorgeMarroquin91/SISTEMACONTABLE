@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaContable", "SistemaContable.csproj", "{5B98BB35-F85F-4330-AB5E-46AB5E27947A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B98BB35-F85F-4330-AB5E-46AB5E27947A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B98BB35-F85F-4330-AB5E-46AB5E27947A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B98BB35-F85F-4330-AB5E-46AB5E27947A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B98BB35-F85F-4330-AB5E-46AB5E27947A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C27B079-74F2-4C32-8124-37B208991D6A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,50 @@
+﻿@model SistemaContable.Models.PRODUCTO_EN_PROCESO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUCTO_EN_PROCESO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_DE_INICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_DE_INICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_DE_DESPACHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_DE_DESPACHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CANTI_PROCESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CANTI_PROCESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATALOGO_DE_PRODUCTO.DESCRIPCION_PRODUCTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATALOGO_DE_PRODUCTO.DESCRIPCION_PRODUCTO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CORRELATIVO_PROCE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

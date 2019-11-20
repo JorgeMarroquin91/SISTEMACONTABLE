@@ -1,0 +1,42 @@
+﻿@model SistemaContable.Models.KARDEX
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KARDEX</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTOUNITARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTOUNITARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_INGRESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_INGRESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_DE_SALIDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_DE_SALIDA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NUMKARDEX }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

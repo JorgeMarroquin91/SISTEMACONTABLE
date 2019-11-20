@@ -1,0 +1,111 @@
+﻿@model IEnumerable<SistemaContable.Models.VENTA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_DOCU_VENTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_PAGO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONCEPTO_DE_VENTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SUBTOTAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCUENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GRAVADAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IVA_PERSIVIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IVA_RETENIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VENTAS_EXENTAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATALOGO_DE_PRODUCTO.DESCRIPCION_PRODUCTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENTE.DUI_CLIENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KARDEX.NUMKARDEX)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_DOCU_VENTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_PAGO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONCEPTO_DE_VENTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SUBTOTAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCUENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GRAVADAS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IVA_PERSIVIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IVA_RETENIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VENTAS_EXENTAS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATALOGO_DE_PRODUCTO.DESCRIPCION_PRODUCTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENTE.DUI_CLIENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KARDEX.NUMKARDEX)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CORRELATIVO_DOC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CORRELATIVO_DOC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CORRELATIVO_DOC })
+        </td>
+    </tr>
+}
+
+</table>

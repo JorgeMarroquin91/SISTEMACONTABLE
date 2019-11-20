@@ -1,0 +1,64 @@
+﻿@model SistemaContable.Models.REMESAS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>REMESAS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.A_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.A_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONCEPTO_REMESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONCEPTO_REMESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTO_REMESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTO_REMESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANULADO_REMESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANULADO_REMESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VENTA.ID_PRODUCTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VENTA.ID_PRODUCTO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

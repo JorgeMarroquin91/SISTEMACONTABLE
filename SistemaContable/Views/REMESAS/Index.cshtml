@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SistemaContable.Models.REMESAS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.A_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONCEPTO_REMESA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTO_REMESA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANULADO_REMESA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VENTA.ID_PRODUCTO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONCEPTO_REMESA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTO_REMESA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANULADO_REMESA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VENTA.ID_PRODUCTO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CORRELATIVO_CHEQUE_REMESA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CORRELATIVO_CHEQUE_REMESA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CORRELATIVO_CHEQUE_REMESA })
+        </td>
+    </tr>
+}
+
+</table>
