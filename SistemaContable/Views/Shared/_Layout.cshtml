@@ -83,14 +83,62 @@
                             <li class="dropdown-header">Producto en proceso</li>
                             <li>@Html.ActionLink("ver produtos", "Index", "PRODUCTO_EN_PROCESO")</li>
                             <li>@Html.ActionLink("agragra producto a proceso", "Create", "PRODUCTO_EN_PROCESO")</li>
+                            <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Producto terminado</li>
                             <li>@Html.ActionLink("ver productos", "Index", "PRODUCTO_TERMINADO")</li>
-                            <li>@Html.ActionLink("agregar producto", "Create", "PRODUCTO_TERMINADO")</li>
+                            <li>@Html.ActionLink("agregar producto terminado", "Create", "PRODUCTO_TERMINADO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">productos</li>
+                            <li>@Html.ActionLink("ver catalogo existente", "Index", "CATALOGO_DE_PRODUCTO")</li>
+                            <li>@Html.ActionLink("agregar producto", "Create", "CATALOGO_DE_PRODUCTO")</li>
+                            
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Costos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("ver costos directos", "Index", "COSTO_INDIRECTO")</li>
+                            <li>@Html.ActionLink("agregar cosoto directo", "Create", "COSTO_INDIRECTO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Costo de materiales</li>
+                            <li>@Html.ActionLink("materiales", "Index", "COTOS_DE_MATERIAL")</li>
+                            <li>@Html.ActionLink("agregar material", "Create", "COTOS_DE_MATERIAL")</li>
+                            <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Kardex</li>
                             <li>@Html.ActionLink("ver Kardex", "Index", "KARDEXES")</li>
                             <li>@Html.ActionLink("nueva Kardex", "create", "KARDEXES")</li>
-                </ul>
+                        </ul>
                     </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Documentos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">cheques</li>
+                            <li>@Html.ActionLink("ver cheques", "Index", "CHEQUES")</li>
+                            <li>@Html.ActionLink("nuevo cheque", "Create", "CHEQUES")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Remesas</li>
+                            <li>@Html.ActionLink("ver remesas", "Index", "REMESAS")</li>
+                            <li>@Html.ActionLink("nueva remasa", "Create", "REMESAS")</li>
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            edicion
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">cuentas</li>
+                            <li>@Html.ActionLink("nueva cuenta", "Create", "CUENTAS")</li>
+                          
+                        </ul>
+                    </li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
