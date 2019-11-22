@@ -3,41 +3,149 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-            @Html.ActionLink("Sistema contables", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Movimientos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-menu-left" href="#">@Html.ActionLink("inventario", "Index", "INVENTARIO_MATERIAL")</a>
-                        <a class="dropdown-item" href="#">Another</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Sistema contables", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Movimietos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Transaccion</li>
+                            <li>@Html.ActionLink("ver transacciones", "Index", "TRANSACCIONES")</li>
+                            <li>@Html.ActionLink("nueva transaccion", "Create", "TRANSACCIONES")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Venta</li>
+                            <li>@Html.ActionLink("ver ventas", "Index", "VENTAS")</li>
+                            <li>@Html.ActionLink("crear nueva venta", "Create", "VENTAS")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Proveedor</li>
+                            <li>@Html.ActionLink("ver proveedores", "Index", "PROVEEDORS")</li>
+                            <li>@Html.ActionLink("agregar proveedor", "Create", "PROVEEDORS")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Compra</li>
+                            <li>@Html.ActionLink("ver compra", "Index", "COMPRAS")</li>
+                            <li>@Html.ActionLink("agregar compra", "Create", "COMPRAS")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Cliente</li>
+                            <li>@Html.ActionLink("ver Clientes", "Index", "CLIENTES")</li>
+                            <li>@Html.ActionLink("agregar clientes", "Create", "CLIENTES")</li>
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Planilla
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("ver planilla", "Index", "PLANILLAs")</li>
+                            <li>@Html.ActionLink("nueva planilla", "Create", "PLANILLAs")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Empleado</li>
+                            <li>@Html.ActionLink("trabajadores", "Index", "EMPLEADOes")</li>
+                            <li>@Html.ActionLink("agregar trabajador", "create", "EMPLEADOes")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">hoja de trabajo</li>
+                            <li>@Html.ActionLink("ver hoja", "Index", "HOJA_DE_TRABAJO")</li>
+                            <li>@Html.ActionLink("nueva hoja", "Create", "HOJA_DE_TRABAJO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Aporte patrono</li>
+                            <li>@Html.ActionLink("aporte", "Index", "PATRONOES")</li>
+                            <li>@Html.ActionLink("nuevos aportes", "Create", "PATRONOES")</li>
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Inventario
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("inventario", "Index", "INVENTARIO_MATERIAL")</li>
+                            <li>@Html.ActionLink("agregar articulo", "Create", "INVENTARIO_MATERIAL")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Producto en proceso</li>
+                            <li>@Html.ActionLink("ver produtos", "Index", "PRODUCTO_EN_PROCESO")</li>
+                            <li>@Html.ActionLink("agragra producto a proceso", "Create", "PRODUCTO_EN_PROCESO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Producto terminado</li>
+                            <li>@Html.ActionLink("ver productos", "Index", "PRODUCTO_TERMINADO")</li>
+                            <li>@Html.ActionLink("agregar producto terminado", "Create", "PRODUCTO_TERMINADO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">productos</li>
+                            <li>@Html.ActionLink("ver catalogo existente", "Index", "CATALOGO_DE_PRODUCTO")</li>
+                            <li>@Html.ActionLink("agregar producto", "Create", "CATALOGO_DE_PRODUCTO")</li>
+                            
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Costos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("ver costos directos", "Index", "COSTO_INDIRECTO")</li>
+                            <li>@Html.ActionLink("agregar cosoto directo", "Create", "COSTO_INDIRECTO")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Costo de materiales</li>
+                            <li>@Html.ActionLink("materiales", "Index", "COTOS_DE_MATERIAL")</li>
+                            <li>@Html.ActionLink("agregar material", "Create", "COTOS_DE_MATERIAL")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Kardex</li>
+                            <li>@Html.ActionLink("ver Kardex", "Index", "KARDEXES")</li>
+                            <li>@Html.ActionLink("nueva Kardex", "create", "KARDEXES")</li>
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Documentos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">cheques</li>
+                            <li>@Html.ActionLink("ver cheques", "Index", "CHEQUES")</li>
+                            <li>@Html.ActionLink("nuevo cheque", "Create", "CHEQUES")</li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Remesas</li>
+                            <li>@Html.ActionLink("ver remesas", "Index", "REMESAS")</li>
+                            <li>@Html.ActionLink("nueva remasa", "Create", "REMESAS")</li>
+                        </ul>
+                    </li>
+                    <li class="item dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            edicion
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">cuentas</li>
+                            <li>@Html.ActionLink("nueva cuenta", "Create", "CUENTAS")</li>
+                          
+                        </ul>
+                    </li>
 
-            </ul>
-            <a class="navbar-brand" href="#">
+                </ul>
                 @Html.Partial("_LoginPartial")
-                </a>
+            </div>
+
+
         </div>
-    </nav>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -45,7 +153,6 @@
             <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
         </footer>
     </div>
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
