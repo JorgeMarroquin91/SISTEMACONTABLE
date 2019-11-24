@@ -3040,7 +3040,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-toggle::after {
-  display: inline-block;
+  display:none;
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
@@ -3136,7 +3136,7 @@ input[type="button"].btn-block {
 }
 
 .dropup .dropdown-toggle::after {
-  display: inline-block;
+  display: none;
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
@@ -3193,7 +3193,7 @@ input[type="button"].btn-block {
 }
 
 .dropleft .dropdown-toggle::after {
-  display: none;
+  display: inline-block;
 }
 
 .dropleft .dropdown-toggle::before {

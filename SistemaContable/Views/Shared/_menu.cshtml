@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "_menu";
+}
+<!-- item en el nava-->
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <!--plantilla presentada para el menu-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Monimiento
+        </a>
+        <!--menu en el nava-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Transacciones</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver transacciones", "Index", "TRANSACCIONES", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nueva transaccion", "Create", "TRANSACCIONES", null, new { @class = "dropdown-item" })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Ventas</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver ventas", "Index", "VENTAS", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("crear nueva venta", "Create", "VENTAS", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Proveedor</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver proveedores", "Index", "PROVEEDORS", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar proveedor", "Create", "PROVEEDORS", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Compra</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver compra", "Index", "COMPRAS", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar compra", "Create", "COMPRAS", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Cliente</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver Clientes", "Index", "CLIENTES", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar clientes", "Create", "CLIENTES", null, new { @class = "dropdown-item " })
+        </div>
+    </li>
+</ul>
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <!--plantilla presentada para el menu-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Planilla
+        </a>
+        <!--menu en el nava-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @Html.ActionLink("ver planilla", "Index", "PLANILLAs", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nueva planilla", "Create", "PLANILLAs", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Trabajadores</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver trabajadores", "Index", "EMPLEADOes", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar trabajador", "create", "EMPLEADOes", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Proveedor</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver hoja", "Index", "HOJA_DE_TRABAJO", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nueva hoja", "Create", "HOJA_DE_TRABAJO", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Compra</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("aporte", "Index", "PATRONOES", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nuevos aportes", "Create", "PATRONOES", null, new { @class = "dropdown-item " })
+
+        </div>
+    </li>
+</ul>
+
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <!--plantilla presentada para el menu-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Inventario
+        </a>
+        <!--menu en el nava-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @Html.ActionLink("inventario", "Index", "INVENTARIO_MATERIAL", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar articulo", "Create", "INVENTARIO_MATERIAL", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Producto en proceso</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver produtos", "Index", "PRODUCTO_EN_PROCESO", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agragra producto a proceso", "Create", "PRODUCTO_EN_PROCESO", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Producto terminado</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver productos", "Index", "PRODUCTO_TERMINADO", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar producto terminado", "Create", "PRODUCTO_TERMINADO", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Productos</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver catalogo existente", "Index", "CATALOGO_DE_PRODUCTO", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar producto", "Create", "CATALOGO_DE_PRODUCTO", null, new { @class = "dropdown-item " })
+
+        </div>
+    </li>
+</ul>
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <!--plantilla presentada para el menu-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Costos
+        </a>
+        <!--menu en el nava-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @Html.ActionLink("ver costos directos", "Index", "COSTO_INDIRECTO", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar cosoto directo", "Create", "COSTO_INDIRECTO", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Material</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("materiales", "Index", "COTOS_DE_MATERIAL", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("agregar material", "Create", "COTOS_DE_MATERIAL", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Kardex</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver Kardex", "Index", "KARDEXES", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nueva Kardex", "create", "KARDEXES", null, new { @class = "dropdown-item " })
+        </div>
+    </li>
+</ul>
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <!--plantilla presentada para el menu-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Documento
+        </a>
+        <!--menu en el nava-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @Html.ActionLink("ver cheques", "Index", "CHEQUES", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nuevo cheque", "Create", "CHEQUES", null, new { @class = "dropdown-item " })
+            <div class="dropdown-divider"> </div>
+            <a class="dropdown-header text-center font-weight-bold font-italic">Material</a>
+            <div class="dropdown-divider"> </div>
+            @Html.ActionLink("ver remesas", "Index", "REMESAS", null, new { @class = "dropdown-item " })
+            @Html.ActionLink("nueva remasa", "Create", "REMESAS", null, new { @class = "dropdown-item " })
+        </div>
+    </li>
+</ul>
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <!--plantilla presentada para el menu-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Edicion
+        </a>
+        <!--menu en el nava-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @Html.ActionLink("nueva cuenta", "Create", "CUENTAS", null, new { @class = "dropdown-item " })
+           
+        </div>
+    </li>
+</ul>
