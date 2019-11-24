@@ -985,16 +985,8 @@ th {
 .glyphicon-education:before {
   content: "\e233";
 }
-
-.dropdown-toggle::after {
-  display:none;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
+.glyphicon-option-horizontal:before {
+  content: "\e234";
 }
 .glyphicon-option-vertical:before {
   content: "\e235";
@@ -1023,16 +1015,8 @@ th {
 .glyphicon-text-background:before {
   content: "\e243";
 }
-
-.dropup .dropdown-toggle::after {
-  display: none;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0.3em solid;
-  border-left: 0.3em solid transparent;
+.glyphicon-object-align-top:before {
+  content: "\e244";
 }
 .glyphicon-object-align-bottom:before {
   content: "\e245";
@@ -1055,9 +1039,8 @@ th {
 .glyphicon-triangle-left:before {
   content: "\e251";
 }
-
-.dropleft .dropdown-toggle::after {
-  display: inline-block;
+.glyphicon-triangle-bottom:before {
+  content: "\e252";
 }
 .glyphicon-triangle-top:before {
   content: "\e253";
